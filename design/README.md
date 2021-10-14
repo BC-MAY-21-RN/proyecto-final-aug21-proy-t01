@@ -9,7 +9,7 @@ Navbar | Deals
 --- | ---
 ![image](https://user-images.githubusercontent.com/45111678/137368063-2739c572-c3d7-4052-8072-0901ea90d2c5.png) | ![image](https://user-images.githubusercontent.com/45111678/137368489-a5aa7514-da7b-45b6-b1ff-db438ef17174.png)
 ---
-Home | whshlist
+Home | whishlist
 --- | ---
 ![image](https://user-images.githubusercontent.com/45111678/137369128-c72ba5ad-4379-4046-a45d-5d736abab619.png) | ![image](https://user-images.githubusercontent.com/45111678/137369530-5b3613c3-ea01-4ee3-88b3-f37683a06927.png)
 ---
