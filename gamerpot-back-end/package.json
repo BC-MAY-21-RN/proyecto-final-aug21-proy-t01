@@ -1,0 +1,25 @@
+{
+  "name": "gamerpot-back-end",
+  "version": "1.0.0",
+  "description": "Gamerpot project back end",
+  "main": "index.js",
+  "scripts": {
+    "watch": "tsc -w",
+    "dev": "nodemon dist/index.js",
+    "start": "node dist/index.js",
+    "build": "rm -rf ./dist && tsc || true",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.16.4",
+    "nodemon": "^2.0.14"
+  }
+}
