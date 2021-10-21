@@ -23,7 +23,7 @@ export class User {
   @Column()
   password: string;
 
-  @Column({ default: 'assets/profile_picture.png' })
+  @Column({ default: '' })
   profilePictureUrl: string;
 
   @OneToMany((type) => Comment, (comment) => comment.user)
