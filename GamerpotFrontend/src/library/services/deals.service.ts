@@ -19,11 +19,26 @@ const DEFAULT_URL_PARAMS: DealsSearchParams = {
   upperPrice: '500',
 };
 
-const API_URL = 'https://www.cheapshark.com/api/1.0/deals?';
+const API_DEALS_URL = 'https://www.cheapshark.com/api/1.0/deals?';
+const API_STORES_URL = 'https://www.cheapshark.com/api/1.0/stores';
+
+const getStores = async () => {
+  const response = await fetch(API_STORES_URL);
+  return await response.json();
+};
 
 export const getDeals = async (params?: DealsSearchParams) => {
   const urlParams = params || DEFAULT_URL_PARAMS;
-  const response = await fetch(`${API_URL}${buildParams(urlParams)}`);
+  const response = await fetch(`${API_DEALS_URL}${buildParams(urlParams)}`);
   const deals: DealInterface[] = await response.json();
-  return deals;
+
+  const stores = await getStores();
+  const fixedDeals: DealInterface[] = deals.map(deal => (
+    {
+      ...deal,
+      ...stores[deal.storeID - 1],
+    }
+  ));
+
+  return fixedDeals;
 };

@@ -22,14 +22,13 @@ const DealsScreen = () => {
       setDeals(response);
     };
     fetchDeals();
-    console.log(deals);
   }, []);
 
   return(
     <ScrollView>
       <Text>Deals</Text>
       {deals.map((deal, index) => (
-        <Text key={index}>{deal.title}</Text>
+        <Text key={index}>{deal.title}, {deal.storeName}</Text>
       ))}
     </ScrollView>
   );
