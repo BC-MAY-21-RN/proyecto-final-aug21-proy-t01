@@ -1,15 +1,21 @@
+import 'reflect-metadata';
 import { json } from 'body-parser';
 import { app } from './app';
-import { initialRouter } from './routes/initial.router';
+import { UserRouter } from './routes/user.router';
+import { createConnection, getConnectionOptions } from 'typeorm';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-const port = process.env.SERVER_PORT || 4000;
-
 app.use(json());
 
-app.use('/api/v1', initialRouter);
+getConnectionOptions().then(options => {
+  createConnection(options).then(() => {
+    app.use('/api/v1', UserRouter().router);
+  });
+});
+
+const port = process.env.SERVER_PORT || 4000;
 
 app.listen(port, () =>
   console.log(`Running on port ${port}`)
