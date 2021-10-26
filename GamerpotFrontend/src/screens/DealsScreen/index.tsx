@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import {ScrollView, Text} from 'react-native';
+import {Text} from 'react-native';
 import {getDeals} from '../../library/services/deals.service';
 import {DealsSearchParams} from '../../library/models/dealsSearchParams';
 import {DealInterface} from '../../library/models/deal';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../HomeScreen/RootStackParams';
 import {useNavigation} from '@react-navigation/core';
-import {SectionSeparator} from '../../components';
+import {SectionSeparator, Wrapper} from '../../components';
 import {styles} from './styles';
 
 type dealsScreenParams = NativeStackNavigationProp<RootStackParamList, 'Deals'>;
@@ -28,14 +28,14 @@ const DealsScreen = () => {
   }, []);
 
   return (
-    <ScrollView style={styles.container}>
+    <Wrapper>
       <SectionSeparator title="Browse deals" />
       {deals.map((deal, index) => (
         <Text key={index} style={styles.text}>
           {deal.title}, {deal.storeName}
         </Text>
       ))}
-    </ScrollView>
+    </Wrapper>
   );
 };
 
