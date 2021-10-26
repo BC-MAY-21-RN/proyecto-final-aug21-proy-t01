@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 import {ScrollView, Text} from 'react-native';
-import { DealsSearchParams, getDeals } from '../../library/services/deals.service';
-import { DealInterface } from '../../library/models/deal';
+import {getDeals} from '../../library/services/deals.service';
+import {DealsSearchParams} from '../../library/models/dealsSearchParams';
+import {DealInterface} from '../../library/models/deal';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../HomeScreen/RootStackParams';
 import {useNavigation} from '@react-navigation/core';
@@ -24,11 +25,13 @@ const DealsScreen = () => {
     fetchDeals();
   }, []);
 
-  return(
+  return (
     <ScrollView>
       <Text>Deals</Text>
       {deals.map((deal, index) => (
-        <Text key={index}>{deal.title}, {deal.storeName}</Text>
+        <Text key={index}>
+          {deal.title}, {deal.storeName}
+        </Text>
       ))}
     </ScrollView>
   );
