@@ -6,6 +6,8 @@ import {DealInterface} from '../../library/models/deal';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../HomeScreen/RootStackParams';
 import {useNavigation} from '@react-navigation/core';
+import {SectionSeparator} from '../../components';
+import {styles} from './styles';
 
 type dealsScreenParams = NativeStackNavigationProp<RootStackParamList, 'Deals'>;
 
@@ -26,10 +28,10 @@ const DealsScreen = () => {
   }, []);
 
   return (
-    <ScrollView>
-      <Text>Deals</Text>
+    <ScrollView style={styles.container}>
+      <SectionSeparator title="Browse deals" />
       {deals.map((deal, index) => (
-        <Text key={index}>
+        <Text key={index} style={styles.text}>
           {deal.title}, {deal.storeName}
         </Text>
       ))}
