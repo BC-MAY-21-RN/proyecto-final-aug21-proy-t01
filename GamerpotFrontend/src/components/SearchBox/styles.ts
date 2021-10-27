@@ -5,18 +5,23 @@ import {fonts} from '../../library/constants/fonts';
 export const styles = StyleSheet.create({
   container: {
     width: '100%',
-    marginTop: 20,
-    marginBottom: 20,
+    marginBottom: 25,
   },
-  line: {
+  input: {
     width: '100%',
-    borderBottomColor: colors.lightGray,
-    borderBottomWidth: 1,
-    marginTop: 10,
-  },
-  text: {
+    backgroundColor: colors.lightGray,
+    fontFamily: fonts.secondary,
     color: colors.secondary,
-    fontFamily: fonts.primary,
+    fontSize: 16,
+    borderRadius: 20,
+    paddingLeft: 18,
+    paddingTop: 5,
+    paddingBottom: 5,
+  },
+  title: {
     fontSize: 18,
+    fontFamily: fonts.primary,
+    color: colors.secondary,
+    marginBottom: 10,
   },
 });
