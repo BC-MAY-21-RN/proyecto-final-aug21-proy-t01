@@ -24,4 +24,9 @@ export const styles = StyleSheet.create({
     color: colors.secondary,
     marginBottom: 10,
   },
+  buttonContainer: {
+    position: 'absolute',
+    right: 20,
+    top: 7,
+  },
 });
