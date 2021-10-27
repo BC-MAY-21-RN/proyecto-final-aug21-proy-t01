@@ -2,12 +2,12 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import {flex} from '../../components/styles';
 
-const ProfileScreen = () => {
+const Wishlist = () => {
   return (
     <View style={flex.container}>
-      <Text>Profile screen!</Text>
+      <Text>Wishlist screen!</Text>
     </View>
   );
 };
 
-export default ProfileScreen;
+export default Wishlist;
