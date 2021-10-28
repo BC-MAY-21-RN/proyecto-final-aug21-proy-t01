@@ -4,7 +4,7 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {useNavigation} from '@react-navigation/core';
 import {RootStackParamList} from './RootStackParams';
 import {flex} from '../../components/styles';
-import {getGames, getGameInfo} from '../../library/services/games.service';
+import {getGames} from '../../library/services/games.service';
 import {GameDetails} from '../../library/models/gameDetails';
 import {GameResponse} from '../../library/models/gameResponse';
 import {GamesSearchParams} from '../../library/models/gamesSearchParams';
@@ -12,7 +12,7 @@ import {GamesSearchParams} from '../../library/models/gamesSearchParams';
 type homeScreenParams = NativeStackNavigationProp<RootStackParamList, 'Home'>;
 const params: GamesSearchParams = {
   page: 1,
-  page_size: 10,
+  page_size: 5,
 };
 
 const HomeScreen = () => {
@@ -38,7 +38,6 @@ const HomeScreen = () => {
             return (
               <View key={index}>
                 <Text>{game.name}</Text>
-                <Text>{game.playtime}</Text>
                 <Text>{game.id}</Text>
               </View>
             );
