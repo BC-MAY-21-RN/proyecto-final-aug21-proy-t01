@@ -4,7 +4,7 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {useNavigation} from '@react-navigation/core';
 import {RootStackParamList} from './RootStackParams';
 import {flex} from '../../components/styles';
-import {getGames} from '../../library/services/games.service';
+import {getGames, getGameInfo} from '../../library/services/games.service';
 import {GameDetails} from '../../library/models/gameDetails';
 import {GameResponse} from '../../library/models/gameResponse';
 import {GamesSearchParams} from '../../library/models/gamesSearchParams';
@@ -23,7 +23,6 @@ const HomeScreen = () => {
     const fetchGamesData = async () => {
       const response: GameResponse = await getGames(params);
       setGames(response.results);
-      console.log(response.count);
     };
     fetchGamesData();
   }, []);
@@ -40,7 +39,7 @@ const HomeScreen = () => {
               <View key={index}>
                 <Text>{game.name}</Text>
                 <Text>{game.playtime}</Text>
-                <Text>{game.metacritic}</Text>
+                <Text>{game.id}</Text>
               </View>
             );
           })}
