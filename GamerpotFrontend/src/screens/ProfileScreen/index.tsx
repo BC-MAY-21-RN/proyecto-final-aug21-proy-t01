@@ -1,13 +1,8 @@
 import React from 'react';
-import {Text, View} from 'react-native';
-import {flex} from '../../components/styles';
+import {CustomText} from '../../components';
 
 const ProfileScreen = () => {
-  return (
-    <View style={flex.container}>
-      <Text>Profile screen!</Text>
-    </View>
-  );
+  return <CustomText title="Profile screen!" />;
 };
 
 export default ProfileScreen;

@@ -1,13 +1,8 @@
 import React from 'react';
-import {Text, View} from 'react-native';
-import {flex} from '../../components/styles';
+import {CustomText} from '../../components';
 
 const BestGamesScreen = () => {
-  return (
-    <View style={flex.container}>
-      <Text>BestGames screen!</Text>
-    </View>
-  );
+  return <CustomText title="Best Games screen!" />;
 };
 
 export default BestGamesScreen;
