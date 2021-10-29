@@ -1,6 +1,7 @@
-import SectionSeparator from './SectionSeparator';
-import Wrapper from './Wrapper';
+import CustomText from './CustomText';
 import GameDeal from './GameDeal';
 import SearchBox from './SearchBox';
+import SectionSeparator from './SectionSeparator';
+import Wrapper from './Wrapper';
 
-export {SectionSeparator, Wrapper, GameDeal, SearchBox};
+export {CustomText, GameDeal, SearchBox, SectionSeparator, Wrapper};
