@@ -40,17 +40,11 @@ const DealsScreen = () => {
         title="Search by title"
         handleClick={handleSearchGame}
       />
-      {areDealsLoading && <Text style={styles.text}>Loading...</Text>}
-      {!areDealsLoading &&
-        deals.map((deal, index) => <GameDeal game={deal} key={index} />)}
+      {deals.map((deal, index) => (
+        <GameDeal game={deal} key={index} />
+      ))}
     </Wrapper>
   );
 };
-
-const styles = StyleSheet.create({
-  text: {
-    color: '#fff',
-  },
-});
 
 export default DealsScreen;
