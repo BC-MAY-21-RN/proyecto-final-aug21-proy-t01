@@ -1,7 +1,7 @@
+import AccountScreen from './AccountScreen';
 import HomeScreen from './HomeScreen';
 import LoginScreen from './LoginScreen';
 import DealsScreen from './DealsScreen';
-import ProfileScreen from './ProfileScreen';
-import BestGamesScreen from './BestGamesScreen';
+import NewsScreen from './NewsScreen';
 
-export {HomeScreen, LoginScreen, DealsScreen, ProfileScreen, BestGamesScreen};
+export {AccountScreen, HomeScreen, LoginScreen, DealsScreen, NewsScreen};

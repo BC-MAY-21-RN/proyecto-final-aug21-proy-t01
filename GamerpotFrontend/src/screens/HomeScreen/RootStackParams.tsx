@@ -1,8 +1,8 @@
 export type RootStackParamList = {
+  Account: undefined;
+  Deals: undefined;
   Home: undefined;
   Login: undefined;
-  Deals: undefined;
-  BestGames: undefined;
+  News: undefined;
   Wishlist: undefined;
-  Profile: undefined;
 };
