@@ -5,6 +5,8 @@ import {DealInterface} from '../../library/models/deal';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../HomeScreen/RootStackParams';
 import {SectionSeparator, Wrapper, GameDeal, SearchBox} from '../../components';
+import {useService} from '../../library/hooks/useService';
+import {Text, StyleSheet} from 'react-native';
 
 type dealsScreenParams = NativeStackNavigationProp<RootStackParamList, 'Deals'>;
 
@@ -16,6 +18,7 @@ const initialParams: DealsSearchParams = {
 const DealsScreen = () => {
   const [deals, setDeals] = useState([] as DealInterface[]);
   const [dealsParams, setDealsParams] = useState(initialParams);
+  const [areDealsLoading, callDealService] = useService(getDeals);
 
   const handleSearchGame = (title: string) => {
     setDealsParams({...dealsParams, title});
@@ -23,7 +26,7 @@ const DealsScreen = () => {
 
   useEffect(() => {
     const fetchDeals = async () => {
-      const response = await getDeals(dealsParams);
+      const response = await callDealService(dealsParams);
       setDeals(response);
     };
     fetchDeals();
@@ -37,11 +40,17 @@ const DealsScreen = () => {
         title="Search by title"
         handleClick={handleSearchGame}
       />
-      {deals.map((deal, index) => (
-        <GameDeal game={deal} key={index} />
-      ))}
+      {areDealsLoading && <Text style={styles.text}>Loading...</Text>}
+      {!areDealsLoading &&
+        deals.map((deal, index) => <GameDeal game={deal} key={index} />)}
     </Wrapper>
   );
 };
+
+const styles = StyleSheet.create({
+  text: {
+    color: '#fff',
+  },
+});
 
 export default DealsScreen;
