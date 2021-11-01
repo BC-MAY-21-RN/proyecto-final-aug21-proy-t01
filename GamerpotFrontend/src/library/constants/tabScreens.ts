@@ -5,9 +5,11 @@ import {
   HomeScreen,
   NewsScreen,
 } from '../../screens';
+import {styles} from '../../components/styles';
 
 export const tabNavigatorOptions = {
-  tabBarActiveTintColor: colors.primary,
+  tabBarStyle: styles.tabBackground,
+  tabBarActiveTintColor: colors.secondary,
 };
 
 export const tabStackList = [

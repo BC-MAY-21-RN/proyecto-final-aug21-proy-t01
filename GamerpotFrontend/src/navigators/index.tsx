@@ -11,9 +11,9 @@ const Tab = createBottomTabNavigator<RootStackParamList>();
 const Navigators = () => {
   return (
     <Tab.Navigator screenOptions={tabNavigatorOptions}>
-      {tabStackList.map(tabItem => (
+      {tabStackList.map((tabItem, index) => (
         <Tab.Screen
-          key={tabItem.name}
+          key={index}
           name={tabItem.name as keyof RootStackParamList}
           component={tabItem.component}
           options={{
