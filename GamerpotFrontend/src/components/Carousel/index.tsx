@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {ScrollView, Text, View} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import News from '../News';
 import newsData from '../../library/utils/newsData';
-import {CHAR_PAGINATION} from '../../library/constants/carouselConstants';
 import {styles} from './styles';
+import Pagination from '../Pagination';
 
 const data = newsData;
 
@@ -13,9 +13,7 @@ const Carousel = () => {
     const currentIndex =
       nativeEvent.contentOffset.x / nativeEvent.layoutMeasurement.width;
     const slide = Math.round(currentIndex);
-    if (slide !== active) {
-      setActive(slide);
-    }
+    slide !== active && setActive(slide);
   };
 
   return (
@@ -30,15 +28,7 @@ const Carousel = () => {
           <News key={index} {...item} />
         ))}
       </ScrollView>
-      <View style={styles.pagination}>
-        {data.map((_, key) => (
-          <Text
-            key={key}
-            style={key === active ? styles.textColorActive : styles.textColor}>
-            {CHAR_PAGINATION}
-          </Text>
-        ))}
-      </View>
+      <Pagination data={data} active={active} />
     </View>
   );
 };

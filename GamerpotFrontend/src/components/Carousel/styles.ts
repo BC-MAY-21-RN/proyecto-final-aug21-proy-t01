@@ -11,13 +11,8 @@ export const styles = StyleSheet.create({
     width,
     height,
   },
-  scroll: {width, height},
-  pagination: {
-    flexDirection: 'row',
-    position: 'absolute',
-    bottom: 0,
-    alignSelf: 'center',
+  scroll: {
+    width,
+    height,
   },
-  textColor: {fontSize: width / 30, color: '#888', margin: 3},
-  textColorActive: {fontSize: width / 30, color: '#fff', margin: 3},
 });
