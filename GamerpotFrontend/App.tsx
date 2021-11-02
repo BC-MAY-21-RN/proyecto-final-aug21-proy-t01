@@ -9,10 +9,15 @@
  */
 
 import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
 import Navigators from './src/navigators/index';
 
 const App = () => {
-  return <Navigators />;
+  return (
+    <NavigationContainer>
+      <Navigators />
+    </NavigationContainer>
+  );
 };
 
 export default App;

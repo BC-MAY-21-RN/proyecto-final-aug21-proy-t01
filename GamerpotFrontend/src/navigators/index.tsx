@@ -1,25 +1,33 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {RootStackParamList} from '../screens/HomeScreen/RootStackParams';
 import {
-  HomeScreen,
-  DealsScreen,
-  BestGamesScreen,
-  ProfileScreen,
-} from '../screens';
+  tabNavigatorOptions,
+  tabStackList,
+} from '../library/constants/tabScreens';
 
 const Tab = createBottomTabNavigator<RootStackParamList>();
 const Navigators = () => {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Deals" component={DealsScreen} />
-        <Tab.Screen name="BestGames" component={BestGamesScreen} />
-        <Tab.Screen name="Profile" component={ProfileScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <Tab.Navigator screenOptions={tabNavigatorOptions}>
+      {tabStackList.map((tabItem, index) => (
+        <Tab.Screen
+          key={index}
+          name={tabItem.name as keyof RootStackParamList}
+          component={tabItem.component}
+          options={{
+            tabBarIcon: ({color, size}) => (
+              <MaterialCommunityIcons
+                name={tabItem.iconName}
+                size={size}
+                color={color}
+              />
+            ),
+          }}
+        />
+      ))}
+    </Tab.Navigator>
   );
 };
 
