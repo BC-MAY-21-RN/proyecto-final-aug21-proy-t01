@@ -13,6 +13,7 @@ import {
 } from '../../components';
 import {useService} from '../../library/hooks/useService';
 import {Text} from 'react-native';
+import {removeNullProperties} from '../../library/services/object.service';
 
 type dealsScreenParams = NativeStackNavigationProp<RootStackParamList, 'Deals'>;
 
@@ -26,17 +27,9 @@ const DealsScreen = () => {
   const [dealsParams, setDealsParams] = useState(initialParams);
   const [areDealsLoading, callDealsService] = useService(getDeals);
 
-  const handleSearchGame = (title: string) => {
-    setDealsParams({...dealsParams, title});
-  };
-
-  const handlePriceChange = (name: string, value: string) => {
-    setDealsParams({...dealsParams, [name]: value});
-  };
-
   useEffect(() => {
     const fetchDeals = async () => {
-      console.log(dealsParams);
+      setDealsParams(removeNullProperties(dealsParams));
       const response = await callDealsService(dealsParams);
       setDeals(response);
     };
@@ -49,9 +42,13 @@ const DealsScreen = () => {
       <SearchBox
         placeholder="Search games"
         title="Search by title"
-        handleClick={handleSearchGame}
+        handleClick={(title: string) => setDealsParams({...dealsParams, title})}
       />
-      <DealsPriceFilter onPriceChange={handlePriceChange} />
+      <DealsPriceFilter
+        onPriceChange={(name: string, value: string) => {
+          setDealsParams({...dealsParams, [name]: value});
+        }}
+      />
       {areDealsLoading && <Text>Loading...</Text>}
       {!areDealsLoading &&
         deals.map((deal, index) => <GameDeal game={deal} key={index} />)}

@@ -23,15 +23,9 @@ export const styles = StyleSheet.create({
     color: colors.secondary,
     textAlign: 'left',
     width: 250,
-    padding: 10,
+    padding: 5,
     paddingLeft: 15,
-    fontSize: 16,
-  },
-  picker: {
-    backgroundColor: colors.lightGray,
-    color: colors.secondary,
-    fontFamily: fonts.secondary,
-    width: 250,
+    fontSize: 14,
   },
   title: {
     fontFamily: fonts.primary,
