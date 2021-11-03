@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {PaginationProps} from './props';
 import {styles} from './styles';
+import {usePagination, isCurrentPage} from '../../library/hooks/usePagination';
 
 const Pagination = ({
   totalItems,
@@ -11,8 +12,13 @@ const Pagination = ({
   showLastPagesButtons = false,
 }: PaginationProps) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [pagination, setPagination] = useState([] as Array<string>);
-  const [totalPages, setTotalPages] = useState(Math.ceil(totalItems / pageSize));
+  const [totalPages] = useState(Math.ceil(totalItems / pageSize));
+  const pagination = usePagination(
+    totalItems,
+    pageSize,
+    pagesToDisplay,
+    currentPage,
+  );
 
   const handleChangePage = (page: string) => {
     if (page !== '...') {
@@ -20,58 +26,6 @@ const Pagination = ({
       onPageChange(parseInt(page, 10));
     }
   };
-
-  const isCurrentPage = (page: string) => {
-    return parseInt(page, 10) === currentPage;
-  };
-
-  const calculateLowerLimit = () => {
-    if (totalPages <= pagesToDisplay + 1) {
-      // Caso especial
-      return 1;
-    } else if (
-      currentPage > 1 &&
-      currentPage < Math.ceil(pagesToDisplay / 2) + 1
-    ) {
-      // Caso 2
-      return 1;
-    } else if (
-      currentPage >= Math.ceil(pagesToDisplay / 2) + 1 &&
-      currentPage + Math.ceil(pagesToDisplay / 2) < totalPages
-    ) {
-      // Caso 3
-      const newLowerLimit = currentPage - Math.floor(pagesToDisplay / 2);
-      return newLowerLimit;
-    } else if (currentPage + Math.ceil(pagesToDisplay / 2) >= totalPages) {
-      // Caso 4
-      const limitNew = totalPages - pagesToDisplay;
-      return limitNew;
-    } else {
-      return 1;
-    }
-  };
-
-  const calculatePagination = (lowerLimit: number) => {
-    const paginationNumbers = [];
-    for (let i = 0; i < pagesToDisplay; i++) {
-      paginationNumbers.push(`${lowerLimit + i}`);
-    }
-    if (!(currentPage + Math.ceil(pagesToDisplay / 2) >= totalPages)) {
-      paginationNumbers.push('...');
-    }
-    paginationNumbers.push(`${totalPages}`);
-    return paginationNumbers;
-  };
-
-  const getPagination = () => {
-    const newLimit = calculateLowerLimit();
-    const newPagination = calculatePagination(newLimit);
-    setPagination(newPagination);
-  };
-
-  useEffect(() => {
-    getPagination();
-  }, [currentPage]);
 
   return (
     <View style={styles.container}>
@@ -89,7 +43,10 @@ const Pagination = ({
       </TouchableOpacity>
       {pagination.map((pag, index) => (
         <TouchableOpacity
-          style={[styles.button, isCurrentPage(pag) && styles.buttonActive]}
+          style={[
+            styles.button,
+            isCurrentPage(pag, currentPage) && styles.buttonActive,
+          ]}
           key={index}
           onPress={() => handleChangePage(pag)}>
           <Text style={styles.text}>{pag}</Text>
