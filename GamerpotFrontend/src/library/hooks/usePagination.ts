@@ -36,25 +36,17 @@ const calculateLowerLimit = (
   pagesToDisplay: number,
   currentPage: number,
 ) => {
-  if (totalPages <= pagesToDisplay + 1) {
-    return 1;
-  } else if (
-    currentPage > 1 &&
-    currentPage < Math.ceil(pagesToDisplay / 2) + 1
+  let lowerLimit = 1;
+  const centralPage = Math.ceil(pagesToDisplay / 2);
+  if (
+    currentPage >= centralPage + 1 &&
+    currentPage + centralPage < totalPages
   ) {
-    return 1;
-  } else if (
-    currentPage >= Math.ceil(pagesToDisplay / 2) + 1 &&
-    currentPage + Math.ceil(pagesToDisplay / 2) < totalPages
-  ) {
-    const newLowerLimit = currentPage - Math.floor(pagesToDisplay / 2);
-    return newLowerLimit;
-  } else if (currentPage + Math.ceil(pagesToDisplay / 2) >= totalPages) {
-    const limitNew = totalPages - pagesToDisplay;
-    return limitNew;
-  } else {
-    return 1;
+    lowerLimit = currentPage - Math.floor(pagesToDisplay / 2);
+  } else if (currentPage + centralPage >= totalPages) {
+    lowerLimit = totalPages - pagesToDisplay;
   }
+  return lowerLimit;
 };
 
 const calculatePagination = (
