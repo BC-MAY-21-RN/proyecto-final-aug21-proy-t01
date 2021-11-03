@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
 import {PaginationProps} from './props';
-import {styles} from './styles';
 import {usePagination, isCurrentPage} from '../../library/hooks/usePagination';
+import PaginationButton from './PaginationButton';
+import PaginationSideButtons from './PaginationSideButtons';
 
 const Pagination = ({
   totalItems,
@@ -28,45 +28,17 @@ const Pagination = ({
   };
 
   return (
-    <View style={styles.container}>
-      {showLastPagesButtons && (
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => setCurrentPage(1)}>
-          <Text style={styles.text}>{'<<'}</Text>
-        </TouchableOpacity>
-      )}
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => currentPage > 1 && setCurrentPage(currentPage - 1)}>
-        <Text style={styles.text}>{'<'}</Text>
-      </TouchableOpacity>
+    <PaginationSideButtons
+      {...{totalPages, currentPage, handleChangePage, showLastPagesButtons}}>
       {pagination.map((pag, index) => (
-        <TouchableOpacity
-          style={[
-            styles.button,
-            isCurrentPage(pag, currentPage) && styles.buttonActive,
-          ]}
+        <PaginationButton
           key={index}
+          isActive={isCurrentPage(pag, currentPage)}
           onPress={() => handleChangePage(pag)}>
-          <Text style={styles.text}>{pag}</Text>
-        </TouchableOpacity>
+          {pag}
+        </PaginationButton>
       ))}
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() =>
-          currentPage < totalPages && setCurrentPage(currentPage + 1)
-        }>
-        <Text style={styles.text}>{'>'}</Text>
-      </TouchableOpacity>
-      {showLastPagesButtons && (
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => setCurrentPage(Math.ceil(totalItems / pageSize))}>
-          <Text style={styles.text}>{'>>'}</Text>
-        </TouchableOpacity>
-      )}
-    </View>
+    </PaginationSideButtons>
   );
 };
 
