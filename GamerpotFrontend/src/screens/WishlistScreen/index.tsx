@@ -1,8 +1,8 @@
 import React from 'react';
-import {CustomText} from '../../components';
+import {Tag} from '../../components';
 
 const Wishlist = () => {
-  return <CustomText title="Wishlist screen!" />;
+  return <Tag text="Wishlist screen!" />;
 };
 
 export default Wishlist;

@@ -1,5 +1,4 @@
 import Carousel from './Carousel';
-import CustomText from './CustomText';
 import DateText from './DateText';
 import DealsPriceFilter from './DealsPriceFilter';
 import DealsScreenInputs from './DealsScreenInputs';
@@ -15,7 +14,6 @@ import NewsDescription from './NewsDescription';
 
 export {
   Carousel,
-  CustomText,
   DateText,
   GameDeal,
   NewsDescription,
