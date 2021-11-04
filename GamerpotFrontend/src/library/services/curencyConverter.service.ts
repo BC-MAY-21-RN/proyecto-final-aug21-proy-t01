@@ -29,15 +29,14 @@ export const calculateDealsNewCurrency = async ({
   if (fromCurrency === toCurrency) {
     return deals;
   }
-
   const conversionRate = await fetchConvertionRate({
     fromCurrency,
     toCurrency,
   });
 
   return deals.map(deal => {
-    const salePrice = deal.salePrice * conversionRate;
-    const normalPrice = deal.normalPrice * conversionRate;
+    const salePrice = Math.floor(deal.salePrice * conversionRate);
+    const normalPrice = Math.floor(deal.normalPrice * conversionRate);
     return {...deal, salePrice, normalPrice};
   });
 };

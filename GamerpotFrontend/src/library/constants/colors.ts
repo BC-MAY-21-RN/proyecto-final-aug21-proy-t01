@@ -7,4 +7,5 @@ export const colors = {
   dealsBackground: '#161618',
   green: '#329C30',
   darkPastelGreen: '#21BA45',
+  blue: '#0786F9',
 };

@@ -1,8 +1,13 @@
 import React from 'react';
-import {CustomText} from '../../components';
+import {TabSection, Wrapper} from '../../components';
+import {data} from '../../library/constants/tabSectionExample';
 
 const NewsScreen = () => {
-  return <CustomText title="News screen!" />;
+  return (
+    <Wrapper>
+      <TabSection tabData={data} />
+    </Wrapper>
+  );
 };
 
 export default NewsScreen;
