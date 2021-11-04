@@ -11,4 +11,9 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.dealsBackground,
     paddingBottom: 4,
   },
+  dateText: {
+    color: colors.secondary,
+    marginTop: 10,
+    fontSize: 14,
+  },
 });

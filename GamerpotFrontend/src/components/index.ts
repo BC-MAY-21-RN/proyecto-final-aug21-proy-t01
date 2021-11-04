@@ -1,18 +1,26 @@
-import CustomText from './CustomText';
+import Carousel from './Carousel';
+import DateText from './DateText';
+import DealsPriceFilter from './DealsPriceFilter';
+import DealsScreenInputs from './DealsScreenInputs';
 import GameDeal from './GameDeal';
 import SearchBox from './SearchBox';
 import SectionSeparator from './SectionSeparator';
 import Wrapper from './Wrapper';
+import Tag from './Tag';
+import TagList from './TagList';
 import TabSection from './TabSection';
-import DealsPriceFilter from './DealsPriceFilter';
 import TextBoxWithLabel from './TextBoxWithLabel';
-import DealsScreenInputs from './DealsScreenInputs';
+import NewsDescription from './NewsDescription';
 
 export {
-  CustomText,
+  Carousel,
+  DateText,
   GameDeal,
+  NewsDescription,
   SearchBox,
   SectionSeparator,
+  Tag,
+  TagList,
   Wrapper,
   DealsPriceFilter,
   TabSection,

@@ -1,8 +1,8 @@
 import React from 'react';
-import {CustomText} from '../../components';
+import {Tag} from '../../components';
 
 const LoginScreen = () => {
-  return <CustomText title="Login screen!" />;
+  return <Tag text="Login screen!" />;
 };
 
 export default LoginScreen;

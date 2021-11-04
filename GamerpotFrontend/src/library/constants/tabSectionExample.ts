@@ -1,9 +1,9 @@
-import {CustomText} from '../../components';
+import {Tag} from '../../components';
 
 export const data = [
   {
     route: 'Genshin Impact',
-    render: CustomText,
+    render: Tag,
     data: [
       {
         title: 'Genshin item 1',
@@ -15,7 +15,7 @@ export const data = [
   },
   {
     route: 'Fortnite',
-    render: CustomText,
+    render: Tag,
     data: [
       {
         title: 'Fornite item 1',
@@ -30,7 +30,7 @@ export const data = [
   },
   {
     route: 'Forza Horizon 5',
-    render: CustomText,
+    render: Tag,
     data: [
       {
         title: 'Forza item 1',
