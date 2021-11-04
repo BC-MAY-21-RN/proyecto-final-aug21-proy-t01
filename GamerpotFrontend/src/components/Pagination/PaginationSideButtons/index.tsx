@@ -24,7 +24,7 @@ const PaginationSideButtons = ({
         }>
         {'<'}
       </PaginationButton>
-      <View style={styles.pageContainer}>{children}</View>
+      {children}
       <PaginationButton
         onPress={() =>
           currentPage < totalPages && handleChangePage(`${currentPage + 1}`)

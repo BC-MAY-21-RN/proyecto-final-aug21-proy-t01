@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     marginTop: 30,
+    flexWrap: 'wrap',
   },
   pageContainer: {
     flexDirection: 'row',

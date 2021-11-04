@@ -10,11 +10,10 @@ export const usePagination = (
 
   const getPagination = () => {
     const totalPages = Math.ceil(totalItems / pageSize);
-    const newLimit = calculateLowerLimit(
-      totalPages,
-      pagesToDisplay,
-      currentPage,
-    );
+    let newLimit = 1;
+    if (totalPages > pagesToDisplay + 1) {
+      newLimit = calculateLowerLimit(totalPages, pagesToDisplay, currentPage);
+    }
     const newPagination = calculatePagination(
       pagesToDisplay,
       currentPage,
@@ -26,7 +25,7 @@ export const usePagination = (
 
   useEffect(() => {
     getPagination();
-  }, [currentPage]);
+  }, [currentPage, totalItems, pagesToDisplay, pageSize]);
 
   return pagination;
 };
@@ -55,17 +54,43 @@ const calculatePagination = (
   lowerLimit: number,
   totalPages: number,
 ) => {
-  const paginationNumbers = [];
-  for (let i = 0; i < pagesToDisplay; i++) {
-    paginationNumbers.push(`${lowerLimit + i}`);
+  let pageLimit = pagesToDisplay;
+  if (totalPages <= pagesToDisplay + 1) {
+    pageLimit = totalPages;
   }
-  if (!(currentPage + Math.ceil(pagesToDisplay / 2) >= totalPages)) {
-    paginationNumbers.push('...');
+  const paginationNumbers = getPaginationNumbers(pageLimit, lowerLimit);
+  if (totalPages > pagesToDisplay + 1) {
+    addPaginationUpperLimit(
+      currentPage,
+      pagesToDisplay,
+      totalPages,
+      paginationNumbers,
+    );
   }
-  paginationNumbers.push(`${totalPages}`);
   return paginationNumbers;
 };
 
 export const isCurrentPage = (page: string, currentPage: number) => {
   return parseInt(page, 10) === currentPage;
+};
+
+const getPaginationNumbers = (pageLimit: number, lowerLimit: number) => {
+  const paginationNumbers = [];
+  for (let i = 0; i < pageLimit; i++) {
+    paginationNumbers.push(`${lowerLimit + i}`);
+  }
+  return paginationNumbers;
+};
+
+const addPaginationUpperLimit = (
+  currentPage: number,
+  pagesToDisplay: number,
+  totalPages: number,
+  pagination: Array<string>,
+) => {
+  if (!(currentPage + Math.ceil(pagesToDisplay / 2) >= totalPages)) {
+    pagination.push('...');
+  }
+  pagination.push(`${totalPages}`);
+  return pagination;
 };

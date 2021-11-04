@@ -10,8 +10,9 @@ const Pagination = ({
   pagesToDisplay,
   onPageChange,
   showLastPagesButtons = false,
+  startOnPage = 1,
 }: PaginationProps) => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(startOnPage);
   const [totalPages] = useState(Math.ceil(totalItems / pageSize));
   const pagination = usePagination(
     totalItems,

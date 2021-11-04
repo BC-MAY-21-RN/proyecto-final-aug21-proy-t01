@@ -11,6 +11,7 @@ export const styles = StyleSheet.create({
     borderColor: colors.lightGray,
     marginHorizontal: 4,
     alignContent: 'center',
+    marginBottom: 8,
   },
   buttonActive: {
     backgroundColor: colors.lightGray,
