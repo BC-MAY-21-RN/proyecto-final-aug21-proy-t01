@@ -6,6 +6,7 @@ import GameDeal from './GameDeal';
 import SearchBox from './SearchBox';
 import SectionSeparator from './SectionSeparator';
 import Wrapper from './Wrapper';
+import Pagination from './Pagination';
 import Tag from './Tag';
 import TagList from './TagList';
 import TabSection from './TabSection';
@@ -26,4 +27,5 @@ export {
   TabSection,
   TextBoxWithLabel,
   DealsScreenInputs,
+  Pagination,
 };

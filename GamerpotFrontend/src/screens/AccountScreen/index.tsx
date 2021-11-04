@@ -1,8 +1,17 @@
 import React from 'react';
-import {Tag} from '../../components';
+import {Pagination, Wrapper} from '../../components';
 
 const AccountScreen = () => {
-  return <Tag text="Account screen!" />;
+  return (
+    <Wrapper>
+      <Pagination
+        totalItems={100}
+        pagesToDisplay={3}
+        pageSize={10}
+        onPageChange={() => {}}
+      />
+    </Wrapper>
+  );
 };
 
 export default AccountScreen;
