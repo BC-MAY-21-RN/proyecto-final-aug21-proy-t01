@@ -3,7 +3,7 @@ import {ScrollView, View} from 'react-native';
 import News from '../News';
 import newsData from '../../library/utils/newsData';
 import {styles} from './styles';
-import Pagination from '../Pagination';
+import DotPagination from '../DotPagination';
 
 const data = newsData;
 
@@ -28,7 +28,7 @@ const Carousel = () => {
           <News key={index} {...item} />
         ))}
       </ScrollView>
-      <Pagination data={data} active={active} />
+      <DotPagination data={data} active={active} />
     </View>
   );
 };

@@ -4,7 +4,7 @@ import {CHAR_PAGINATION} from '../../library/constants/carouselConstants';
 import {PaginationProps} from './props';
 import {styles} from './styles';
 
-const Pagination = ({data, active}: PaginationProps) => {
+const DotPagination = ({data, active}: PaginationProps) => {
   return (
     <View style={styles.pagination}>
       {data.map((_, key) => (
@@ -18,4 +18,4 @@ const Pagination = ({data, active}: PaginationProps) => {
   );
 };
 
-export default Pagination;
+export default DotPagination;
