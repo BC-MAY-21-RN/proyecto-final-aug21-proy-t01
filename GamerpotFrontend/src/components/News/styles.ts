@@ -2,13 +2,10 @@ import {StyleSheet} from 'react-native';
 import {HEIGHT, WINDOW_WIDTH} from '../../library/constants/carouselConstants';
 import {colors} from '../../library/constants/colors';
 
-const width = WINDOW_WIDTH;
-const height = HEIGHT;
-
 export const styles = StyleSheet.create({
   image: {
-    width,
-    height,
+    width: WINDOW_WIDTH,
+    height: HEIGHT,
     resizeMode: 'cover',
   },
   textContainer: {
