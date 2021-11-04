@@ -4,7 +4,17 @@ import {DealsSearchParams} from '../../library/models/dealsSearchParams';
 import {DealInterface} from '../../library/models/deal';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../HomeScreen/RootStackParams';
-import {SectionSeparator, Wrapper, GameDeal, SearchBox} from '../../components';
+import {
+  SectionSeparator,
+  Wrapper,
+  GameDeal,
+  SearchBox,
+  DealsPriceFilter,
+  DealsScreenInputs,
+} from '../../components';
+import {useService} from '../../library/hooks/useService';
+import {Text} from 'react-native';
+import {removeNullProperties} from '../../library/services/object.service';
 
 type dealsScreenParams = NativeStackNavigationProp<RootStackParamList, 'Deals'>;
 
@@ -16,14 +26,12 @@ const initialParams: DealsSearchParams = {
 const DealsScreen = () => {
   const [deals, setDeals] = useState([] as DealInterface[]);
   const [dealsParams, setDealsParams] = useState(initialParams);
-
-  const handleSearchGame = (title: string) => {
-    setDealsParams({...dealsParams, title});
-  };
+  const [areDealsLoading, callDealsService] = useService(getDeals);
 
   useEffect(() => {
     const fetchDeals = async () => {
-      const response = await getDeals(dealsParams);
+      setDealsParams(removeNullProperties(dealsParams));
+      const response = await callDealsService(dealsParams);
       setDeals(response);
     };
     fetchDeals();
@@ -31,15 +39,12 @@ const DealsScreen = () => {
 
   return (
     <Wrapper>
-      <SectionSeparator title="Browse deals" />
-      <SearchBox
-        placeholder="Search games"
-        title="Search by title"
-        handleClick={handleSearchGame}
+      <DealsScreenInputs
+        handleParams={param => setDealsParams({...dealsParams, ...param})}
       />
-      {deals.map((deal, index) => (
-        <GameDeal game={deal} key={index} />
-      ))}
+      {areDealsLoading && <Text>Loading...</Text>}
+      {!areDealsLoading &&
+        deals.map((deal, index) => <GameDeal game={deal} key={index} />)}
     </Wrapper>
   );
 };
