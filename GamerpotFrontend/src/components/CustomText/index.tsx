@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import {styles} from '../styles';
+import {styles} from './styles';
 
 interface TextWrapper {
   title: string;
@@ -9,7 +9,7 @@ interface TextWrapper {
 const CustomText = ({title}: TextWrapper) => {
   return (
     <View style={styles.container}>
-      <Text>{title}</Text>
+      <Text style={styles.text}>{title}</Text>
     </View>
   );
 };
