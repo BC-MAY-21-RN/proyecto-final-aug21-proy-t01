@@ -10,6 +10,7 @@ import {
   GameDeal,
   SearchBox,
   DealsPriceFilter,
+  DealsScreenInputs,
 } from '../../components';
 import {useService} from '../../library/hooks/useService';
 import {Text} from 'react-native';
@@ -38,16 +39,8 @@ const DealsScreen = () => {
 
   return (
     <Wrapper>
-      <SectionSeparator title="Browse deals" />
-      <SearchBox
-        placeholder="Search games"
-        title="Search by title"
-        handleClick={(title: string) => setDealsParams({...dealsParams, title})}
-      />
-      <DealsPriceFilter
-        onPriceChange={(name: string, value: string) => {
-          setDealsParams({...dealsParams, [name]: value});
-        }}
+      <DealsScreenInputs
+        handleParams={param => setDealsParams({...dealsParams, ...param})}
       />
       {areDealsLoading && <Text>Loading...</Text>}
       {!areDealsLoading &&

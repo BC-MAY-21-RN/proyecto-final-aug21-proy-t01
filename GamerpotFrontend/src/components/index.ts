@@ -5,6 +5,8 @@ import SectionSeparator from './SectionSeparator';
 import Wrapper from './Wrapper';
 import TabSection from './TabSection';
 import DealsPriceFilter from './DealsPriceFilter';
+import TextBoxWithLabel from './TextBoxWithLabel';
+import DealsScreenInputs from './DealsScreenInputs';
 
 export {
   CustomText,
@@ -14,4 +16,6 @@ export {
   Wrapper,
   DealsPriceFilter,
   TabSection,
+  TextBoxWithLabel,
+  DealsScreenInputs,
 };
