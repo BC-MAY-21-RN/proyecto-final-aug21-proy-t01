@@ -7,7 +7,7 @@ import PaginationSideButtons from './PaginationSideButtons';
 const Pagination = ({
   totalItems,
   pageSize,
-  pagesToDisplay,
+  pagesToDisplay = 3,
   onPageChange,
   showLastPagesButtons = false,
   startOnPage = 1,

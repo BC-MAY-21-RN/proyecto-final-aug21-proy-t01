@@ -6,12 +6,11 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../HomeScreen/RootStackParams';
 import {
   Wrapper,
-  GameDeal,
   DealsScreenInputs,
   Pagination,
+  DealsList,
 } from '../../components';
 import {useService} from '../../library/hooks/useService';
-import {Text} from 'react-native';
 import {removeNullProperties} from '../../library/services/object.service';
 
 type dealsScreenParams = NativeStackNavigationProp<RootStackParamList, 'Deals'>;
@@ -26,7 +25,6 @@ const DealsScreen = () => {
   const [dealsParams, setDealsParams] = useState(initialParams);
   const [totalItems, setTotalItems] = useState(1);
   const [areDealsLoading, callDealsService] = useService(getDeals);
-
   useEffect(() => {
     const fetchDeals = async () => {
       setDealsParams(removeNullProperties(dealsParams));
@@ -36,25 +34,16 @@ const DealsScreen = () => {
     };
     fetchDeals();
   }, [dealsParams]);
-
   return (
     <Wrapper>
       <DealsScreenInputs
         handleParams={param =>
-          setDealsParams({...dealsParams, ...param, pageNumber: 0})
-        }
-      />
-      {areDealsLoading && <Text>Loading...</Text>}
-      {!areDealsLoading &&
-        deals.map((deal, index) => <GameDeal game={deal} key={index} />)}
+          setDealsParams({...dealsParams, ...param, pageNumber: 0})} />
+      <DealsList loading={areDealsLoading} deals={deals} />
       <Pagination
         totalItems={totalItems}
-        pagesToDisplay={3}
         pageSize={dealsParams.pageSize}
-        onPageChange={page =>
-          setDealsParams({...dealsParams, pageNumber: page - 1})
-        }
-      />
+        onPageChange={page => setDealsParams({...dealsParams, pageNumber: page - 1})} />
     </Wrapper>
   );
 };
