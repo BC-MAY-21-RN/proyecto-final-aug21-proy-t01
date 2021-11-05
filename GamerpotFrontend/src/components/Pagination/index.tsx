@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {PaginationProps} from './props';
 import {usePagination, isCurrentPage} from '../../library/hooks/usePagination';
 import PaginationButton from './PaginationButton';
@@ -27,6 +27,10 @@ const Pagination = ({
       onPageChange(parseInt(page, 10));
     }
   };
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [totalItems, pageSize]);
 
   return (
     <PaginationSideButtons
