@@ -1,7 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {colors} from '../../library/constants/colors';
+import {Text, View} from 'react-native';
 import {DescriptionProp} from './props';
+import {styles} from './styles';
 
 const NewsDescription = ({text, numberOfLines}: DescriptionProp) => {
   return (
@@ -14,13 +14,3 @@ const NewsDescription = ({text, numberOfLines}: DescriptionProp) => {
 };
 
 export default NewsDescription;
-
-const styles = StyleSheet.create({
-  textEllipsis: {
-    color: colors.secondary,
-    fontWeight: 'bold',
-    fontSize: 22,
-    lineHeight: 27,
-    marginTop: 10,
-  },
-});

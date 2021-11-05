@@ -1,20 +1,45 @@
-import React from 'react';
-import {Text, View} from 'react-native';
-import {CHAR_PAGINATION} from '../../library/constants/carouselConstants';
+import React, {useState} from 'react';
 import {PaginationProps} from './props';
-import {styles} from './styles';
+import {usePagination, isCurrentPage} from '../../library/hooks/usePagination';
+import PaginationButton from './PaginationButton';
+import PaginationSideButtons from './PaginationSideButtons';
 
-const Pagination = ({data, active}: PaginationProps) => {
+const Pagination = ({
+  totalItems,
+  pageSize,
+  pagesToDisplay,
+  onPageChange,
+  showLastPagesButtons = false,
+  startOnPage = 1,
+}: PaginationProps) => {
+  const [currentPage, setCurrentPage] = useState(startOnPage);
+  const [totalPages] = useState(Math.ceil(totalItems / pageSize));
+  const pagination = usePagination(
+    totalItems,
+    pageSize,
+    pagesToDisplay,
+    currentPage,
+  );
+
+  const handleChangePage = (page: string) => {
+    if (page !== '...') {
+      setCurrentPage(parseInt(page, 10));
+      onPageChange(parseInt(page, 10));
+    }
+  };
+
   return (
-    <View style={styles.pagination}>
-      {data.map((_, key) => (
-        <Text
-          key={key}
-          style={key === active ? styles.textColorActive : styles.textColor}>
-          {CHAR_PAGINATION}
-        </Text>
+    <PaginationSideButtons
+      {...{totalPages, currentPage, handleChangePage, showLastPagesButtons}}>
+      {pagination.map((pag, index) => (
+        <PaginationButton
+          key={index}
+          isActive={isCurrentPage(pag, currentPage)}
+          onPress={() => handleChangePage(pag)}>
+          {pag}
+        </PaginationButton>
       ))}
-    </View>
+    </PaginationSideButtons>
   );
 };
 

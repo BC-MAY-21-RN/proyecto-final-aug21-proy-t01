@@ -1,6 +1,8 @@
-import {NewsProps} from '../News/props';
-
 export interface PaginationProps {
-  data: NewsProps[];
-  active: number;
+  totalItems: number;
+  pagesToDisplay: number;
+  pageSize: number;
+  onPageChange: (page: number) => void;
+  showLastPagesButtons?: boolean;
+  startOnPage?: number;
 }
