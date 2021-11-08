@@ -5,7 +5,7 @@ import {fonts} from '../../library/constants/fonts';
 export const styles = StyleSheet.create({
   container: {
     width: '100%',
-    backgroundColor: colors.dealsBackground,
+    backgroundColor: colors.complementary,
     flexDirection: 'row',
     marginBottom: 15,
   },

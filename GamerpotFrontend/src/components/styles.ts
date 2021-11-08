@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   tabBackground: {
-    backgroundColor: colors.dealsBackground,
+    backgroundColor: colors.complementary,
     paddingBottom: 4,
   },
   dateText: {
