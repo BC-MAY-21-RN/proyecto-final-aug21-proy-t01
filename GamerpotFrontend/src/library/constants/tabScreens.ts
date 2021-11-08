@@ -6,11 +6,27 @@ import {
   NewsScreen,
 } from '../../screens';
 import {styles} from '../../components/styles';
+import {fonts} from './fonts';
 
 export const tabNavigatorOptions = {
   tabBarStyle: styles.tabBackground,
   tabBarActiveTintColor: colors.secondary,
 };
+
+export const headerOptions = {
+  headerTitle: 'GAMERPOT',
+  headerStyle: {
+    backgroundColor: colors.complementary,
+  },
+  headerTitleStyle: {
+    fontFamily: fonts.header,
+    color: colors.secondary,
+    fontSize: 18,
+  },
+  headerTitleAlign: 'center',
+};
+
+export const navigationOptions = {...tabNavigatorOptions, ...headerOptions};
 
 export const tabStackList = [
   {
