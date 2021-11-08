@@ -12,6 +12,7 @@ import TagList from './TagList';
 import TabSection from './TabSection';
 import TextBoxWithLabel from './TextBoxWithLabel';
 import NewsDescription from './NewsDescription';
+import DealsList from './DealsList';
 
 export {
   Carousel,
@@ -28,4 +29,5 @@ export {
   TextBoxWithLabel,
   DealsScreenInputs,
   Pagination,
+  DealsList,
 };
