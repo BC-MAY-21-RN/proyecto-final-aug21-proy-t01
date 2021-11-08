@@ -5,12 +5,13 @@ import {RootStackParamList} from '../screens/HomeScreen/RootStackParams';
 import {
   tabNavigatorOptions,
   tabStackList,
+  headerOptions,
 } from '../library/constants/tabScreens';
 
 const Tab = createBottomTabNavigator<RootStackParamList>();
 const Navigators = () => {
   return (
-    <Tab.Navigator screenOptions={tabNavigatorOptions}>
+    <Tab.Navigator screenOptions={{...tabNavigatorOptions, ...headerOptions}}>
       {tabStackList.map((tabItem, index) => (
         <Tab.Screen
           key={index}

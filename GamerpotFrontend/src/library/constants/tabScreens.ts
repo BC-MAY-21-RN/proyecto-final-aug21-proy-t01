@@ -6,10 +6,19 @@ import {
   NewsScreen,
 } from '../../screens';
 import {styles} from '../../components/styles';
+import {createHeader} from '../../components/Header';
 
 export const tabNavigatorOptions = {
   tabBarStyle: styles.tabBackground,
   tabBarActiveTintColor: colors.secondary,
+};
+
+export const headerOptions = {
+  headerTitle: () => createHeader(),
+  headerStyle: {
+    backgroundColor: colors.complementary,
+  },
+  headerTitleAlign: 'center',
 };
 
 export const tabStackList = [
