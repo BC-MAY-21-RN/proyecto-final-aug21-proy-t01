@@ -13,3 +13,8 @@ export interface DealInterface {
     icon: string;
   };
 }
+
+export interface DealsResponse {
+  list: Array<DealInterface>;
+  totalItems: number;
+}
