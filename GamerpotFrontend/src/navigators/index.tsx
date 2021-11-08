@@ -2,16 +2,12 @@ import React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {RootStackParamList} from '../screens/HomeScreen/RootStackParams';
-import {
-  tabNavigatorOptions,
-  tabStackList,
-  headerOptions,
-} from '../library/constants/tabScreens';
+import {tabStackList, navigationOptions} from '../library/constants/tabScreens';
 
 const Tab = createBottomTabNavigator<RootStackParamList>();
 const Navigators = () => {
   return (
-    <Tab.Navigator screenOptions={{...tabNavigatorOptions, ...headerOptions}}>
+    <Tab.Navigator screenOptions={navigationOptions}>
       {tabStackList.map((tabItem, index) => (
         <Tab.Screen
           key={index}
