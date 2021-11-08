@@ -1,10 +1,18 @@
 import React from 'react';
-import {View, Image, Text, TouchableOpacity} from 'react-native';
+import {View, Image, Text, TouchableOpacity, Linking} from 'react-native';
 import {CardData} from './props';
 import NewsDescription from '../NewsDescription';
 import DateText from '../DateText';
 import TagList from '../TagList';
 import {styles} from './styles';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import LabelWithIcon from '../LabelWithIcon';
+
+const handleClick = (link: string) => {
+  if (link) {
+    Linking.openURL(link);
+  }
+};
 
 const GameHorizontalCard = ({
   image,
@@ -14,9 +22,12 @@ const GameHorizontalCard = ({
   saves,
   comments,
   metacritic,
+  link,
 }: CardData) => {
   return (
-    <TouchableOpacity style={styles.cardContainer}>
+    <TouchableOpacity
+      onPress={() => handleClick(link)}
+      style={styles.cardContainer}>
       <View style={styles.imageContainer}>
         <Image source={{uri: image}} style={styles.image} />
       </View>
@@ -27,10 +38,14 @@ const GameHorizontalCard = ({
         {tags && <TagList tags={tags} />}
         <DateText title={date} />
         {saves && (
-          <View>
-            <Text>{saves}</Text>
-            <Text>{comments}</Text>
-            <Text>{metacritic}</Text>
+          <View style={styles.commentsContainer}>
+            <View style={styles.row}>
+              <LabelWithIcon icon="bookmark">{saves}</LabelWithIcon>
+              <LabelWithIcon icon="comment">{comments}</LabelWithIcon>
+            </View>
+            <View style={styles.metacriticContainer}>
+              <Text style={styles.metacriticText}>{metacritic}</Text>
+            </View>
           </View>
         )}
       </View>

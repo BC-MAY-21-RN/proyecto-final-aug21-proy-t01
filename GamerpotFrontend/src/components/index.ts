@@ -16,6 +16,7 @@ import DealsList from './DealsList';
 import NewsCard from './NewsCard';
 import NewsCardList from './NewsCardList';
 import GameHorizontalCard from './GameHorizontalCard';
+import LabelWithIcon from './LabelWithIcon';
 
 export {
   Carousel,
@@ -36,4 +37,5 @@ export {
   NewsCard,
   NewsCardList,
   GameHorizontalCard,
+  LabelWithIcon,
 };
