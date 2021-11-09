@@ -37,15 +37,4 @@ export const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
   },
-  metacriticContainer: {
-    paddingHorizontal: 5,
-    paddingVertical: 2,
-    borderWidth: 1,
-    borderColor: colors.darkPastelGreen,
-  },
-  metacriticText: {
-    color: colors.darkPastelGreen,
-    fontFamily: fonts.primary,
-    fontSize: 16,
-  },
 });

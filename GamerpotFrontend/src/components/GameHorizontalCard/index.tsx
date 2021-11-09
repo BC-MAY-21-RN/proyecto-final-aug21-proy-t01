@@ -4,8 +4,8 @@ import {CardData} from './props';
 import NewsDescription from '../NewsDescription';
 import DateText from '../DateText';
 import TagList from '../TagList';
+import Metacritic from '../Metacritic';
 import {styles} from './styles';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import LabelWithIcon from '../LabelWithIcon';
 
 const handleClick = (link: string) => {
@@ -43,9 +43,7 @@ const GameHorizontalCard = ({
               <LabelWithIcon icon="bookmark">{saves}</LabelWithIcon>
               <LabelWithIcon icon="comment">{comments}</LabelWithIcon>
             </View>
-            <View style={styles.metacriticContainer}>
-              <Text style={styles.metacriticText}>{metacritic}</Text>
-            </View>
+            <Metacritic score={metacritic} />
           </View>
         )}
       </View>

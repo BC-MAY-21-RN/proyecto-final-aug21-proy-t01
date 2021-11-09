@@ -17,6 +17,7 @@ import NewsCard from './NewsCard';
 import NewsCardList from './NewsCardList';
 import GameHorizontalCard from './GameHorizontalCard';
 import LabelWithIcon from './LabelWithIcon';
+import Metacritic from './Metacritic';
 
 export {
   Carousel,
@@ -38,4 +39,5 @@ export {
   NewsCardList,
   GameHorizontalCard,
   LabelWithIcon,
+  Metacritic,
 };
