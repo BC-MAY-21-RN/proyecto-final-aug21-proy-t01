@@ -1,12 +1,12 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 import {styles} from './styles';
-import {SectionTitleProp} from './props';
+import {SectionTitleProps} from './props';
 
-const SectionTitle = ({title}: SectionTitleProp) => {
+const SectionTitle = ({title}: SectionTitleProps) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.textArea}>{title}</Text>
+      <Text style={styles.textArea}>{title ? title : 'Games'}</Text>
     </View>
   );
 };
