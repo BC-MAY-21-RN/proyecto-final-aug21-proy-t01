@@ -1,14 +1,16 @@
 import {NewsProps} from '../../components/News/props';
 import {News} from '../models/news';
 import {parseDate} from './parseDate';
+import {CardData} from '../../components/GameHorizontalCard/props';
 
 export const parseNewsToNewsCard = (news: Array<News>) => {
   const parsedTags: Array<Array<string>> = news.map(obj => parseTags(obj));
-  const parsedNews: Array<NewsProps> = news.map((obj, index) => ({
-    img: obj.image.screen_tiny,
+  const parsedNews: Array<CardData> = news.map((obj, index) => ({
+    image: obj.image.original,
     title: obj.title,
-    dateRelease: parseDate(obj.publish_date),
+    date: parseDate(obj.publish_date),
     tags: parsedTags[index],
+    link: obj.site_detail_url,
   }));
   return parsedNews;
 };

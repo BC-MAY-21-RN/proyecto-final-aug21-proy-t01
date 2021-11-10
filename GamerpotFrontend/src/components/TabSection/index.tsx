@@ -14,11 +14,12 @@ const TabSection = ({tabData}: TabSectionProps) => {
         setActiveTab={setActiveTab}
       />
       <View style={styles.dataContainer}>
-        {tabData[activeTab].data.map((data, index) => {
-          const RenderComponent = tabData[activeTab]
-            .render as React.ElementType;
-          return <RenderComponent key={index} {...data} />;
-        })}
+        {tabData[activeTab] &&
+          tabData[activeTab].data.map((data, index) => {
+            const RenderComponent = tabData[activeTab]
+              .render as React.ElementType;
+            return <RenderComponent key={index} {...data} />;
+          })}
       </View>
     </View>
   );

@@ -1,19 +1,19 @@
 import React from 'react';
 import {Image, View} from 'react-native';
 import {DateText, NewsDescription, TagList} from '..';
-import {NewsProps} from '../News/props';
+import {CardData} from '../GameHorizontalCard/props';
 import {styles} from './styles';
 
-const NewsCard = ({img, tags, title, dateRelease}: NewsProps) => {
+const NewsCard = ({image, tags = [], title, date}: CardData) => {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image source={{uri: img}} style={styles.image} />
+        <Image source={{uri: image}} style={styles.image} />
       </View>
       <View style={styles.details}>
         <TagList tags={tags} />
         <NewsDescription text={title} numberOfLines={2} />
-        <DateText title={dateRelease} />
+        <DateText title={date} />
       </View>
     </View>
   );

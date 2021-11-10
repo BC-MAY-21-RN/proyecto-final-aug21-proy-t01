@@ -1,5 +1,5 @@
-import {NewsProps} from '../News/props';
+import {CardData} from '../GameHorizontalCard/props';
 
 export interface NewsCardListProps {
-  news: Array<NewsProps>;
+  news: Array<CardData>;
 }

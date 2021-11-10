@@ -6,11 +6,10 @@ import {
   GamesSection,
   NewsSection,
   Wrapper,
-  TabSection,
+  TrendingSection,
 } from '../../components';
 import {ScrollView} from 'react-native';
 import {styles} from './styles';
-import {data} from '../../library/constants/tabSectionExample';
 
 type homeScreenParams = NativeStackNavigationProp<RootStackParamList, 'Home'>;
 
@@ -19,9 +18,11 @@ const HomeScreen = () => {
     <ScrollView style={styles.container}>
       <Carousel />
       <Wrapper>
+        <GamesSection />
       </Wrapper>
+      <NewsSection />
       <Wrapper>
-        <TabSection tabData={data} />
+        <TrendingSection />
       </Wrapper>
     </ScrollView>
   );

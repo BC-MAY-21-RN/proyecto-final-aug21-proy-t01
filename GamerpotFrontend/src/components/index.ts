@@ -23,6 +23,7 @@ import LabelWithIcon from './LabelWithIcon';
 import Metacritic from './Metacritic';
 import GamesSection from './GamesSection';
 import NewsSection from './NewsSection';
+import TrendingSection from './TrendingSection';
 
 export {
   Carousel,
@@ -50,4 +51,5 @@ export {
   Metacritic,
   GamesSection,
   NewsSection,
+  TrendingSection,
 };

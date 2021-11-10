@@ -4,11 +4,11 @@ import {useService} from '../../library/hooks/useService';
 import {NewsResponse} from '../../library/models/newsResponse';
 import {getNews} from '../../library/services/news.service';
 import {parseNewsToNewsCard} from '../../library/utils/parseNews';
-import {NewsProps} from '../News/props';
 import NewsCardList from '../NewsCardList';
+import {CardData} from '../GameHorizontalCard/props';
 
 const NewsSection = () => {
-  const [news, setNews] = useState([] as Array<NewsProps>);
+  const [news, setNews] = useState([] as Array<CardData>);
   const [areNewsLoading, callNewsService] = useService(getNews);
   useEffect(() => {
     const fetchNews = async () => {

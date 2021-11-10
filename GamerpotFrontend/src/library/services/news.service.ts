@@ -15,6 +15,6 @@ export const getNews = async (params?: NewsSearchParams) => {
     const newsResponse: NewsResponse = await response.json();
     return newsResponse;
   } catch (error) {
-    return [];
+    return [] as unknown as NewsResponse;
   }
 };
