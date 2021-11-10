@@ -13,7 +13,9 @@ import TabSection from './TabSection';
 import TextBoxWithLabel from './TextBoxWithLabel';
 import NewsDescription from './NewsDescription';
 import DealsList from './DealsList';
-import Header from './Header';
+import SelectorPicker from './SelectorPicker';
+import SectionTitle from './SectionTitle';
+import GamesSection from './GamesSection';
 
 export {
   Carousel,
@@ -31,5 +33,7 @@ export {
   DealsScreenInputs,
   Pagination,
   DealsList,
-  Header,
+  SelectorPicker,
+  SectionTitle,
+  GamesSection,
 };
