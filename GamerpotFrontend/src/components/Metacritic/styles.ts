@@ -3,11 +3,15 @@ import {colors} from '../../library/constants/colors';
 import {fonts} from '../../library/constants/fonts';
 
 export const styles = StyleSheet.create({
-  textEllipsis: {
-    color: colors.secondary,
+  metacriticContainer: {
+    paddingHorizontal: 5,
+    paddingVertical: 2,
+    borderWidth: 1,
+    borderColor: colors.darkPastelGreen,
+  },
+  metacriticText: {
+    color: colors.darkPastelGreen,
     fontFamily: fonts.primary,
-    fontSize: 22,
-    lineHeight: 27,
-    marginTop: 10,
+    fontSize: 16,
   },
 });

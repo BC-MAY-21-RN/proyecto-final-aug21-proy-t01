@@ -8,4 +8,5 @@ export const colors = {
   green: '#329C30',
   darkPastelGreen: '#21BA45',
   blue: '#0786F9',
+  complementary2: '#CCCCCC',
 };

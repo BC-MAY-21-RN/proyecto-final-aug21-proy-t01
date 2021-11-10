@@ -15,7 +15,9 @@ import NewsDescription from './NewsDescription';
 import DealsList from './DealsList';
 import NewsCard from './NewsCard';
 import NewsCardList from './NewsCardList';
-
+import GameHorizontalCard from './GameHorizontalCard';
+import LabelWithIcon from './LabelWithIcon';
+import Metacritic from './Metacritic';
 
 export {
   Carousel,
@@ -35,4 +37,7 @@ export {
   DealsList,
   NewsCard,
   NewsCardList,
+  GameHorizontalCard,
+  LabelWithIcon,
+  Metacritic,
 };
