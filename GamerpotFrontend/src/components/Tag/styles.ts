@@ -10,11 +10,11 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 22,
     paddingVertical: 5,
     marginRight: 8,
+    maxWidth: 150,
   },
   labelTag: {
     color: colors.secondary,
     fontSize: 12,
     fontFamily: fonts.secondary,
-    lineHeight: 15,
   },
 });

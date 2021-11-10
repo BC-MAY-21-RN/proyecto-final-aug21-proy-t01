@@ -7,13 +7,13 @@ import {styles} from './styles';
 const NewsCard = ({img, tags, title, dateRelease}: NewsProps) => {
   return (
     <View style={styles.container}>
-      <Image source={{uri: img}} style={styles.image} />
+      <View style={styles.imageContainer}>
+        <Image source={{uri: img}} style={styles.image} />
+      </View>
       <View style={styles.details}>
         <TagList tags={tags} />
-        <View>
-          <NewsDescription text={title} numberOfLines={2} />
-          <DateText title={dateRelease} />
-        </View>
+        <NewsDescription text={title} numberOfLines={2} />
+        <DateText title={dateRelease} />
       </View>
     </View>
   );

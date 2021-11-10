@@ -20,7 +20,10 @@ export default TagList;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     flexDirection: 'row',
+    maxWidth: '100%',
+    flexWrap: 'wrap',
+    maxHeight: 28,
+    overflow: 'hidden',
   },
 });

@@ -22,6 +22,7 @@ import GameHorizontalCard from './GameHorizontalCard';
 import LabelWithIcon from './LabelWithIcon';
 import Metacritic from './Metacritic';
 import GamesSection from './GamesSection';
+import NewsSection from './NewsSection';
 
 export {
   Carousel,
@@ -48,4 +49,5 @@ export {
   LabelWithIcon,
   Metacritic,
   GamesSection,
+  NewsSection,
 };

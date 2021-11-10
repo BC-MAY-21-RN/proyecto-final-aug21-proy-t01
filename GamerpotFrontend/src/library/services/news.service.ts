@@ -13,7 +13,7 @@ export const getNews = async (params?: NewsSearchParams) => {
       `${API_GAMESPOT_URL}${buildParams(urlParams)}`,
     );
     const newsResponse: NewsResponse = await response.json();
-    return newsResponse.results;
+    return newsResponse;
   } catch (error) {
     return [];
   }

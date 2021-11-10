@@ -1,14 +1,14 @@
 import React from 'react';
 import {FlatList, View} from 'react-native';
-import {NewsProps} from '../News/props';
 import {NewsCard} from '..';
+import {NewsCardListProps} from './props';
 
-const NewsCardList = ({...newsData}: NewsProps[]) => {
+const NewsCardList = ({news}: NewsCardListProps) => {
   return (
     <View>
       <FlatList
         horizontal
-        data={newsData}
+        data={news}
         renderItem={({item}) => <NewsCard {...item} />}
       />
     </View>
