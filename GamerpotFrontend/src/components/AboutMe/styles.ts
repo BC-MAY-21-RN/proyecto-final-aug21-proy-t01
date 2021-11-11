@@ -16,7 +16,6 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
     borderRadius: 10,
-    backgroundColor: colors.darkPastelGreen,
   },
   aboutText: {
     color: colors.secondary,

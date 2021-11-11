@@ -5,10 +5,16 @@ import {colors} from '../../library/constants/colors';
 import {AboutProps} from './props';
 import {styles} from './styles';
 
-const AboutMe = ({title, description, isLoggedIn}: AboutProps) => {
+const AboutMe = ({title, color, description, isLoggedIn}: AboutProps) => {
   return (
     <View style={styles.aboutContainer}>
-      <View style={styles.textContainer}>
+      <View
+        style={[
+          styles.textContainer,
+          color
+            ? {backgroundColor: color}
+            : {backgroundColor: colors.darkPastelGreen},
+        ]}>
         <Text style={styles.aboutText}>{title ? title : 'About Me'}</Text>
       </View>
       <View style={styles.descriptionContainer}>
