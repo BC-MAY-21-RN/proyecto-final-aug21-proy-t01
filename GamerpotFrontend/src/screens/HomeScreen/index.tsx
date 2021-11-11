@@ -3,7 +3,7 @@ import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from './RootStackParams';
 import {
   Carousel,
-  GamesSection,
+  HomeGamesSection,
   NewsSection,
   Wrapper,
   TrendingSection,
@@ -18,7 +18,7 @@ const HomeScreen = () => {
     <ScrollView style={styles.container}>
       <Carousel />
       <Wrapper>
-        <GamesSection />
+        <HomeGamesSection />
       </Wrapper>
       <NewsSection />
       <Wrapper>

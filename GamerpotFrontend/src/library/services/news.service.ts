@@ -1,6 +1,6 @@
 import {NewsResponse} from '../models/newsResponse';
 import {NewsSearchParams} from '../models/newsSearchParams';
-import {buildParams} from './paramBuilder';
+import {fetchWithParams} from './paramBuilder';
 import {
   API_GAMESPOT_URL,
   DEFAULT_GAMESPOT_URL_PARAMS,
@@ -8,10 +8,11 @@ import {
 
 export const getNews = async (params?: NewsSearchParams) => {
   try {
-    const urlParams = params || DEFAULT_GAMESPOT_URL_PARAMS;
-    const response = await fetch(
-      `${API_GAMESPOT_URL}${buildParams(urlParams)}`,
-    );
+    const response = await fetchWithParams({
+      params: params,
+      defaultParams: DEFAULT_GAMESPOT_URL_PARAMS,
+      url: API_GAMESPOT_URL,
+    });
     const newsResponse: NewsResponse = await response.json();
     return newsResponse;
   } catch (error) {

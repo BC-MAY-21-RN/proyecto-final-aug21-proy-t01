@@ -14,38 +14,31 @@ const initialParams: GamesSearchParams = {
   page_size: 5,
 };
 
-const GameSection = () => {
+const HomeGamesSection = () => {
   const [games, setGames] = useState([] as Array<CardData>);
   const [gamesParams, setGamesParams] = useState(initialParams);
   const [areGamesLoading, callGamesService] = useService(getGames);
   const [totalItems, setTotalItems] = useState(1);
   useEffect(() => {
     const fetchGames = async () => {
-      const {count, results}: GameResponse = await callGamesService(
-        gamesParams,
-      );
-      const parsedGames = parseGames(results);
+      const {count, results}: GameResponse = await callGamesService(gamesParams);
       setTotalItems(count);
-      setGames(parsedGames);
+      setGames(parseGames(results));
     };
     fetchGames();
   }, [gamesParams]);
-
   return (
     <View>
       {areGamesLoading && <Text>Loading...</Text>}
-      {games &&
-        games.map((game, index) => (
+      {games && games.map((game, index) => (
           <GameHorizontalCard {...game} key={index} />
         ))}
       <Pagination
         totalItems={totalItems}
         pageSize={gamesParams.page_size}
-        onPageChange={page => setGamesParams({...gamesParams, page})}
-        showLastPagesButtons={true}
-      />
+        onPageChange={page => setGamesParams({...gamesParams, page})}/>
     </View>
   );
 };
 
-export default GameSection;
+export default HomeGamesSection;

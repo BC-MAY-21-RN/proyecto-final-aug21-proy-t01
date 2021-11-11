@@ -1,6 +1,5 @@
 import {StyleSheet} from 'react-native';
 import {colors} from '../../library/constants/colors';
-import { fonts } from '../../library/constants/fonts';
 
 export const styles = StyleSheet.create({
   cardContainer: {
@@ -14,11 +13,6 @@ export const styles = StyleSheet.create({
   imageContainer: {
     width: 114,
     height: 114,
-  },
-  image: {
-    width: '100%',
-    height: '100%',
-    borderRadius: 10,
   },
   dataContainer: {
     width: '70%',

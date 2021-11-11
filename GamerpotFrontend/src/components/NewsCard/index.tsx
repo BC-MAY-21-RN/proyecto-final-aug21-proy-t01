@@ -1,14 +1,15 @@
 import React from 'react';
-import {Image, View} from 'react-native';
+import {View} from 'react-native';
 import {DateText, NewsDescription, TagList} from '..';
 import {CardData} from '../GameHorizontalCard/props';
 import {styles} from './styles';
+import CardImage from '../CardImage';
 
 const NewsCard = ({image, tags = [], title, date}: CardData) => {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image source={{uri: image}} style={styles.image} />
+        <CardImage image={image} />
       </View>
       <View style={styles.details}>
         <TagList tags={tags} />

@@ -15,13 +15,12 @@ import NewsDescription from './NewsDescription';
 import DealsList from './DealsList';
 import SelectorPicker from './SelectorPicker';
 import SectionTitle from './SectionTitle';
-import GamesSection from './GamesSection';
 import NewsCard from './NewsCard';
 import NewsCardList from './NewsCardList';
 import GameHorizontalCard from './GameHorizontalCard';
 import LabelWithIcon from './LabelWithIcon';
 import Metacritic from './Metacritic';
-import GamesSection from './GamesSection';
+import HomeGamesSection from './HomeGamesSection';
 import NewsSection from './NewsSection';
 import TrendingSection from './TrendingSection';
 
@@ -43,13 +42,12 @@ export {
   DealsList,
   SelectorPicker,
   SectionTitle,
-  GamesSection,
   NewsCard,
   NewsCardList,
   GameHorizontalCard,
   LabelWithIcon,
   Metacritic,
-  GamesSection,
+  HomeGamesSection,
   NewsSection,
   TrendingSection,
 };

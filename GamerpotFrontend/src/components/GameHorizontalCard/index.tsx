@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image, TouchableOpacity, Linking} from 'react-native';
+import {View, TouchableOpacity, Linking} from 'react-native';
 import {CardData} from './props';
 import NewsDescription from '../NewsDescription';
 import DateText from '../DateText';
@@ -7,6 +7,7 @@ import TagList from '../TagList';
 import Metacritic from '../Metacritic';
 import {styles} from './styles';
 import LabelWithIcon from '../LabelWithIcon';
+import CardImage from '../CardImage';
 
 const handleClick = (link: string) => {
   if (link) {
@@ -29,7 +30,7 @@ const GameHorizontalCard = ({
       onPress={() => handleClick(link)}
       style={styles.cardContainer}>
       <View style={styles.imageContainer}>
-        <Image source={{uri: image}} style={styles.image} />
+        <CardImage image={image} />
       </View>
       <View style={styles.dataContainer}>
         <View style={styles.titleContainer}>
