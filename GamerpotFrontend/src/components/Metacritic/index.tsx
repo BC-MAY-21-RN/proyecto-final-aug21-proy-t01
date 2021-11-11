@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 import {MetacriticProps} from './props';
 import {styles} from './styles';
 
-const Metacritic = ({score = 0}: MetacriticProps) => {
+const Metacritic = ({score}: MetacriticProps) => {
   return (
     <View style={styles.metacriticContainer}>
       <Text style={styles.metacriticText}>{score ? score : 'NA'}</Text>

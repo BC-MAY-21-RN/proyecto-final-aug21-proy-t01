@@ -37,7 +37,7 @@ const GameHorizontalCard = ({
         </View>
         {tags && <TagList tags={tags} />}
         <DateText title={date} />
-        {saves && (
+        {metacritic && (
           <View style={styles.commentsContainer}>
             <View style={styles.row}>
               <LabelWithIcon icon="bookmark">{saves}</LabelWithIcon>
