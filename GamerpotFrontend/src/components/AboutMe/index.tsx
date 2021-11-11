@@ -9,7 +9,7 @@ const AboutMe = ({title, description, isLoggedIn}: AboutProps) => {
   return (
     <View style={styles.aboutContainer}>
       <View style={styles.textContainer}>
-        <Text style={styles.aboutText}>{title}</Text>
+        <Text style={styles.aboutText}>{title ? title : 'About Me'}</Text>
       </View>
       <View style={styles.descriptionContainer}>
         <View style={styles.icon}>

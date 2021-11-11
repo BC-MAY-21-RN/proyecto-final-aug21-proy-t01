@@ -8,7 +8,6 @@ const AccountScreen = () => {
   return (
     <Wrapper>
       <AboutMe
-        title="About Me"
         isLoggedIn={true}
         description="I’m a casual PC gamer who likes racing, shooter and open world games."
       />

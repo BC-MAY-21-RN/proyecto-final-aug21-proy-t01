@@ -1,5 +1,5 @@
 export interface AboutProps {
-  title: string;
+  title?: string;
   description: string;
   isLoggedIn: boolean;
 }
