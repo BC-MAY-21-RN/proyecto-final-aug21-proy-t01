@@ -16,6 +16,11 @@ import DealsList from './DealsList';
 import SelectorPicker from './SelectorPicker';
 import SectionTitle from './SectionTitle';
 import GamesSection from './GamesSection';
+import NewsCard from './NewsCard';
+import NewsCardList from './NewsCardList';
+import GameHorizontalCard from './GameHorizontalCard';
+import LabelWithIcon from './LabelWithIcon';
+import Metacritic from './Metacritic';
 
 export {
   Carousel,
@@ -36,4 +41,9 @@ export {
   SelectorPicker,
   SectionTitle,
   GamesSection,
+  NewsCard,
+  NewsCardList,
+  GameHorizontalCard,
+  LabelWithIcon,
+  Metacritic,
 };
