@@ -21,8 +21,10 @@ import NewsCardList from './NewsCardList';
 import GameHorizontalCard from './GameHorizontalCard';
 import LabelWithIcon from './LabelWithIcon';
 import Metacritic from './Metacritic';
+import AboutMe from './AboutMe';
 
 export {
+  AboutMe,
   Carousel,
   DateText,
   GameDeal,

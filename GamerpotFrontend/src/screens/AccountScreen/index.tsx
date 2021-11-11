@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Pagination, Wrapper} from '../../components';
+import {AboutMe, Pagination, Wrapper} from '../../components';
 import {Text} from 'react-native';
 import {styles} from './styles';
 
@@ -7,6 +7,10 @@ const AccountScreen = () => {
   const [page, setPage] = useState(1);
   return (
     <Wrapper>
+      <AboutMe
+        isLoggedIn={true}
+        description="I’m a casual PC gamer who likes racing, shooter and open world games."
+      />
       <Text style={styles.example}>You are on page {page}</Text>
       <Pagination
         totalItems={120}

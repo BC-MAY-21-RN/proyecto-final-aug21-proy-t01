@@ -9,4 +9,5 @@ export const colors = {
   darkPastelGreen: '#21BA45',
   blue: '#0786F9',
   complementary2: '#CCCCCC',
+  grayComplementary: '#373737',
 };
