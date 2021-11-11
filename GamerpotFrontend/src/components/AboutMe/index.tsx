@@ -5,11 +5,11 @@ import {colors} from '../../library/constants/colors';
 import {AboutProps} from './props';
 import {styles} from './styles';
 
-const AboutMe = ({description, isLoggedIn}: AboutProps) => {
+const AboutMe = ({title, description, isLoggedIn}: AboutProps) => {
   return (
     <View style={styles.aboutContainer}>
       <View style={styles.textContainer}>
-        <Text style={styles.aboutText}>About me</Text>
+        <Text style={styles.aboutText}>{title}</Text>
       </View>
       <View style={styles.descriptionContainer}>
         <View style={styles.icon}>
