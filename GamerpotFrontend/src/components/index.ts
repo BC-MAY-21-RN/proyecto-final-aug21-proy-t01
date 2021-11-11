@@ -13,6 +13,9 @@ import TabSection from './TabSection';
 import TextBoxWithLabel from './TextBoxWithLabel';
 import NewsDescription from './NewsDescription';
 import DealsList from './DealsList';
+import SelectorPicker from './SelectorPicker';
+import SectionTitle from './SectionTitle';
+import GamesSection from './GamesSection';
 import NewsCard from './NewsCard';
 import NewsCardList from './NewsCardList';
 import GameHorizontalCard from './GameHorizontalCard';
@@ -35,6 +38,9 @@ export {
   DealsScreenInputs,
   Pagination,
   DealsList,
+  SelectorPicker,
+  SectionTitle,
+  GamesSection,
   NewsCard,
   NewsCardList,
   GameHorizontalCard,
