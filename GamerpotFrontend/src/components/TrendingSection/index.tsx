@@ -8,6 +8,8 @@ import {
   trending3,
 } from '../../library/constants/trendingConstants';
 import {TabItem} from '../TabSection/props';
+import SectionTitle from '../SectionTitle';
+import {styles} from './styles';
 
 const TrendingSection = () => {
   const [trendingData, setTrendingData] = useState([] as Array<TabItem>);
@@ -21,7 +23,12 @@ const TrendingSection = () => {
     };
     fetchData();
   }, []);
-  return <View>{trendingData && <TabSection tabData={trendingData} />}</View>;
+  return (
+    <View style={styles.trendingContainer}>
+      <SectionTitle title="Trending" />
+      {trendingData && <TabSection tabData={trendingData} />}
+    </View>
+  );
 };
 
 export default TrendingSection;

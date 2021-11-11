@@ -43,7 +43,7 @@ const HomeGamesSection = () => {
           <GameHorizontalCard {...game} key={index} />
         ))}
       <Pagination
-        totalItems={totalItems}
+        totalItems={totalItems < 1000 ? totalItems : 1000}
         pageSize={gamesParams.page_size}
         onPageChange={page => setGamesParams({...gamesParams, page})}/>
     </View>

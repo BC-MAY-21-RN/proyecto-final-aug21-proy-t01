@@ -6,6 +6,9 @@ import {getNews} from '../../library/services/news.service';
 import {parseNewsToNewsCard} from '../../library/utils/parseNews';
 import NewsCardList from '../NewsCardList';
 import {CardData} from '../GameHorizontalCard/props';
+import SectionTitle from '../SectionTitle';
+import Wrapper from '../Wrapper';
+import {styles} from './styles';
 
 const NewsSection = () => {
   const [news, setNews] = useState([] as Array<CardData>);
@@ -22,7 +25,9 @@ const NewsSection = () => {
   }, []);
   return (
     <View>
-      {areNewsLoading && <Text>Loading...</Text>}
+      <View style={styles.titleContainer}>
+        <SectionTitle title="Latest news" />
+      </View>
       <NewsCardList news={news} />
     </View>
   );

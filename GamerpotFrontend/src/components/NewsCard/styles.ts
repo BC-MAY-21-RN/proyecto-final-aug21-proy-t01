@@ -9,6 +9,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.darkGray,
     borderRadius: 10,
     margin: 16,
+    marginTop: 0,
     overflow: 'hidden',
   },
   imageContainer: {
