@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {colors} from '../../library/constants/colors';
+import {fonts} from '../../library/constants/fonts';
 
 export const styles = StyleSheet.create({
   container: {
@@ -10,8 +11,7 @@ export const styles = StyleSheet.create({
   textArea: {
     color: colors.secondary,
     fontSize: 24,
-    paddingLeft: 20,
     paddingBottom: 2,
-    fontWeight: 'bold',
+    fontFamily: fonts.primary,
   },
 });

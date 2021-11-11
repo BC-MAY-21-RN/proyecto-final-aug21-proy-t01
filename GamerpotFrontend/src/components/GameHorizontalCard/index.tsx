@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, TouchableOpacity, Linking} from 'react-native';
 import {CardData} from './props';
 import NewsDescription from '../NewsDescription';
@@ -25,6 +25,12 @@ const GameHorizontalCard = ({
   metacritic,
   link,
 }: CardData) => {
+  const [showComments, setShowComments] = useState(true);
+  useEffect(() => {
+    if (saves === undefined || comments === undefined) {
+      setShowComments(false);
+    }
+  }, []);
   return (
     <TouchableOpacity
       onPress={() => handleClick(link)}
@@ -38,7 +44,7 @@ const GameHorizontalCard = ({
         </View>
         {tags && <TagList tags={tags} />}
         <DateText title={date} />
-        {metacritic && (
+        {showComments && (
           <View style={styles.commentsContainer}>
             <View style={styles.row}>
               <LabelWithIcon icon="bookmark">{saves}</LabelWithIcon>

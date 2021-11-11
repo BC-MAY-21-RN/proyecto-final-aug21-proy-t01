@@ -3,10 +3,14 @@ import {Alert} from 'react-native';
 import SelectDropdown from 'react-native-select-dropdown';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {styles} from './styles';
-import {SelectoPickerProps} from './props';
+import {SelectorPickerProps} from './props';
 import {colors} from '../../library/constants/colors';
 
-const SelectorPicker = ({data, defaultText}: SelectoPickerProps) => {
+const SelectorPicker = ({
+  data,
+  defaultText,
+  handleChange,
+}: SelectorPickerProps) => {
   return (
     <SelectDropdown
       buttonStyle={styles.buttomBorder}
@@ -18,12 +22,12 @@ const SelectorPicker = ({data, defaultText}: SelectoPickerProps) => {
         <MaterialCommunityIcons
           name="chevron-down"
           color={colors.secondary}
-          size={32}
+          size={26}
         />
       )}
       data={data}
       onSelect={(selectedItem, _index) => {
-        Alert.alert(selectedItem);
+        handleChange(selectedItem);
       }}
       buttonTextAfterSelection={(selectedItem, _index) => {
         return selectedItem;

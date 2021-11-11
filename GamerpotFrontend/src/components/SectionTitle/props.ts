@@ -1,4 +1,4 @@
 export interface SectionTitleProps {
-  title?: string;
-  mb: number;
+  title: string;
+  mb?: number;
 }

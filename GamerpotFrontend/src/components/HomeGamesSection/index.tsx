@@ -8,6 +8,7 @@ import {getGames} from '../../library/services/games.service';
 import {GameResponse} from '../../library/models/gameResponse';
 import {parseGames} from '../../library/utils/parseGames';
 import Pagination from '../Pagination';
+import GameSectionInputs from './GamesSectionInputs';
 
 const initialParams: GamesSearchParams = {
   page: 1,
@@ -29,6 +30,14 @@ const HomeGamesSection = () => {
   }, [gamesParams]);
   return (
     <View>
+      <GameSectionInputs
+        handleOrderChange={order =>
+          setGamesParams({...gamesParams, ordering: `-${order}`})
+        }
+        handlePlatformChange={platform =>
+          setGamesParams({...gamesParams, platforms: platform})
+        }
+      />
       {areGamesLoading && <Text>Loading...</Text>}
       {games && games.map((game, index) => (
           <GameHorizontalCard {...game} key={index} />
