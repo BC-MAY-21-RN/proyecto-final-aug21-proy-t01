@@ -8,12 +8,7 @@ import Metacritic from '../Metacritic';
 import {styles} from './styles';
 import LabelWithIcon from '../LabelWithIcon';
 import CardImage from '../CardImage';
-
-const handleClick = (link: string) => {
-  if (link) {
-    Linking.openURL(link);
-  }
-};
+import {handleOpenLink} from '../../library/utils/links';
 
 const GameHorizontalCard = ({
   image,
@@ -33,7 +28,7 @@ const GameHorizontalCard = ({
   }, []);
   return (
     <TouchableOpacity
-      onPress={() => handleClick(link)}
+      onPress={() => handleOpenLink(link)}
       style={styles.cardContainer}>
       <View style={styles.imageContainer}>
         <CardImage image={image} />

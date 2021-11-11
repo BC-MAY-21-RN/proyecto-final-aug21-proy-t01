@@ -7,7 +7,6 @@ import {parseNewsToNewsCard} from '../../library/utils/parseNews';
 import NewsCardList from '../NewsCardList';
 import {CardData} from '../GameHorizontalCard/props';
 import SectionTitle from '../SectionTitle';
-import Wrapper from '../Wrapper';
 import {styles} from './styles';
 
 const NewsSection = () => {
