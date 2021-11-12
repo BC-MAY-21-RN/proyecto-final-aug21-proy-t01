@@ -9,7 +9,9 @@ interface TagProps {
 const Tag = ({text}: TagProps) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.labelTag}>{text}</Text>
+      <Text style={styles.labelTag} numberOfLines={1}>
+        {text}
+      </Text>
     </View>
   );
 };

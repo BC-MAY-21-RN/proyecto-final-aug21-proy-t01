@@ -15,12 +15,14 @@ import NewsDescription from './NewsDescription';
 import DealsList from './DealsList';
 import SelectorPicker from './SelectorPicker';
 import SectionTitle from './SectionTitle';
-import GamesSection from './GamesSection';
 import NewsCard from './NewsCard';
 import NewsCardList from './NewsCardList';
 import GameHorizontalCard from './GameHorizontalCard';
 import LabelWithIcon from './LabelWithIcon';
 import Metacritic from './Metacritic';
+import HomeGamesSection from './HomeGamesSection';
+import NewsSection from './NewsSection';
+import TrendingSection from './TrendingSection';
 import AboutMe from './AboutMe';
 
 export {
@@ -42,10 +44,12 @@ export {
   DealsList,
   SelectorPicker,
   SectionTitle,
-  GamesSection,
   NewsCard,
   NewsCardList,
   GameHorizontalCard,
   LabelWithIcon,
   Metacritic,
+  HomeGamesSection,
+  NewsSection,
+  TrendingSection,
 };

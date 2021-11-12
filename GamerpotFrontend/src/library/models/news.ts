@@ -8,10 +8,12 @@ export interface News {
     square_small: string;
     original: string;
   };
-  associations: {
-    id: number;
-    name: string;
-  };
+  associations: [
+    {
+      id: number;
+      name: string;
+    },
+  ];
   publish_date: string;
   site_detail_url: string;
 }

@@ -1,21 +1,25 @@
 import React from 'react';
-import {Image, View} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
 import {DateText, NewsDescription, TagList} from '..';
-import {NewsProps} from '../News/props';
+import {CardData} from '../GameHorizontalCard/props';
 import {styles} from './styles';
+import CardImage from '../CardImage';
+import {handleOpenLink} from '../../library/utils/links';
 
-const NewsCard = ({img, tags, title, dateRelease}: NewsProps) => {
+const NewsCard = ({image, tags = [], title, date, link}: CardData) => {
   return (
-    <View style={styles.container}>
-      <Image source={{uri: img}} style={styles.image} />
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => handleOpenLink(link)}>
+      <View style={styles.imageContainer}>
+        <CardImage image={image} />
+      </View>
       <View style={styles.details}>
         <TagList tags={tags} />
-        <View>
-          <NewsDescription text={title} numberOfLines={2} />
-          <DateText title={dateRelease} />
-        </View>
+        <NewsDescription text={title} numberOfLines={2} />
+        <DateText title={date} />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

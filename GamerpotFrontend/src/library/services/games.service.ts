@@ -1,4 +1,4 @@
-import {buildParams} from './paramBuilder';
+import {fetchWithParams} from './paramBuilder';
 import {
   DEFAULT_URL_PARAMS,
   API_GAMES_URL,
@@ -11,8 +11,11 @@ import {GameDetails} from '../models/gameDetails';
 import {PlatformsResponse} from '../models/platformsResponse';
 
 export const getGames = async (params?: GamesSearchParams) => {
-  const urlParams = params || DEFAULT_URL_PARAMS;
-  const response = await fetch(`${API_GAMES_URL}${buildParams(urlParams)}`);
+  const response = await fetchWithParams({
+    params: params,
+    defaultParams: DEFAULT_URL_PARAMS,
+    url: API_GAMES_URL,
+  });
   const games: GameResponse = await response.json();
   return games;
 };

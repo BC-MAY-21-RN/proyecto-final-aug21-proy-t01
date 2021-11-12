@@ -7,4 +7,6 @@ export const DEFAULT_GAMESPOT_URL_PARAMS: NewsSearchParams = {
   sort: 'publish_date:desc',
 };
 
-export const API_GAMESPOT_URL = `http://www.gamespot.com/api/articles/?api_key=${GAMESPOT_API_KEY}&format=json`;
+const KEY = '548675760f97528b78996deae785884770db6c8f';
+
+export const API_GAMESPOT_URL = `http://www.gamespot.com/api/articles/?api_key=${KEY}&format=json`;
