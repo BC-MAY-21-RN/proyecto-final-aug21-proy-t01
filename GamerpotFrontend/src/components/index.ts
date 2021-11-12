@@ -23,8 +23,10 @@ import Metacritic from './Metacritic';
 import HomeGamesSection from './HomeGamesSection';
 import NewsSection from './NewsSection';
 import TrendingSection from './TrendingSection';
+import AboutMe from './AboutMe';
 
 export {
+  AboutMe,
   Carousel,
   DateText,
   GameDeal,
