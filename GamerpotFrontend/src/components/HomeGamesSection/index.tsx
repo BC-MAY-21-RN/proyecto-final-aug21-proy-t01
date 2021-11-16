@@ -9,17 +9,24 @@ import {GameResponse} from '../../library/models/gameResponse';
 import {parseGames} from '../../library/utils/parseGames';
 import Pagination from '../Pagination';
 import GameSectionInputs from './GamesSectionInputs';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {RootStackParamList} from '../../screens/HomeScreen/RootStackParams';
 
 const initialParams: GamesSearchParams = {
   page: 1,
   page_size: 5,
 };
 
+type homeScreenParams = NativeStackNavigationProp<RootStackParamList, 'Home'>;
+
 const HomeGamesSection = () => {
   const [games, setGames] = useState([] as Array<CardData>);
   const [gamesParams, setGamesParams] = useState(initialParams);
   const [areGamesLoading, callGamesService] = useService(getGames);
   const [totalItems, setTotalItems] = useState(1);
+  const navigation = useNavigation<homeScreenParams>();
+  const handleClick = (gameId: number) => navigation.navigate('Game', {gameId});
   useEffect(() => {
     const fetchGames = async () => {
       const {count, results}: GameResponse = await callGamesService(gamesParams);
@@ -40,7 +47,7 @@ const HomeGamesSection = () => {
       />
       {areGamesLoading && <Text>Loading...</Text>}
       {games && games.map((game, index) => (
-          <GameHorizontalCard {...game} key={index} />
+          <GameHorizontalCard {...game} key={index} onClick={handleClick} />
         ))}
       <Pagination
         totalItems={totalItems < 1000 ? totalItems : 1000}

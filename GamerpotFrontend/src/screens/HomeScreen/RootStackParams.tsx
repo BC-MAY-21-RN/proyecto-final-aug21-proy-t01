@@ -5,5 +5,5 @@ export type RootStackParamList = {
   Login: undefined;
   News: undefined;
   Wishlist: undefined;
-  Game: {gameId: string};
+  Game: {gameId: number};
 };

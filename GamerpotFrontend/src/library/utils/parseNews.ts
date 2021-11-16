@@ -6,6 +6,7 @@ import {CardData} from '../../components/GameHorizontalCard/props';
 export const parseNewsToNewsCard = (news: Array<News>) => {
   const parsedTags: Array<Array<string>> = news.map(obj => parseTags(obj));
   const parsedNews: Array<CardData> = news.map((obj, index) => ({
+    id: obj.id,
     image: obj.image.original,
     title: obj.title,
     date: parseDate(obj.publish_date),
