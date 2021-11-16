@@ -24,6 +24,7 @@ import HomeGamesSection from './HomeGamesSection';
 import NewsSection from './NewsSection';
 import TrendingSection from './TrendingSection';
 import AboutMe from './AboutMe';
+import TextButton from './TextButton';
 
 export {
   AboutMe,
@@ -52,4 +53,5 @@ export {
   HomeGamesSection,
   NewsSection,
   TrendingSection,
+  TextButton,
 };
