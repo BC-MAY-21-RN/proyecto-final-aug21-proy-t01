@@ -1,4 +1,5 @@
 export interface CardData {
+  id: number;
   image: string;
   title: string;
   date: string;
@@ -7,4 +8,5 @@ export interface CardData {
   saves?: number;
   comments?: number;
   metacritic?: number;
+  onClick?: (id: number) => void;
 }
