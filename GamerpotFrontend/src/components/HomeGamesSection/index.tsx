@@ -47,7 +47,8 @@ const HomeGamesSection = () => {
         }
       />
       {areGamesLoading && <GameCardSkeletonList display={5} />}
-      {games && games.map((game, index) => (
+      {!areGamesLoading &&
+        games && games.map((game, index) => (
           <GameHorizontalCard {...game} key={index} onClick={handleClick} />
         ))}
       <Pagination

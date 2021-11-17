@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import TabSection from '../TabSection';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import {getTrendingData} from '../../library/utils/getTrendingData';
 import {
+  initialTrendingData,
   trending1,
   trending2,
   trending3,
@@ -12,7 +13,9 @@ import SectionTitle from '../SectionTitle';
 import {styles} from './styles';
 
 const TrendingSection = () => {
-  const [trendingData, setTrendingData] = useState([] as Array<TabItem>);
+  const [trendingData, setTrendingData] = useState(
+    initialTrendingData as Array<TabItem>,
+  );
   useEffect(() => {
     const fetchData = async () => {
       const data1: TabItem = await getTrendingData(trending1);
@@ -26,7 +29,7 @@ const TrendingSection = () => {
   return (
     <View style={styles.trendingContainer}>
       <SectionTitle title="Trending" />
-      {trendingData && <TabSection tabData={trendingData} />}
+      <TabSection tabData={trendingData} />
     </View>
   );
 };
