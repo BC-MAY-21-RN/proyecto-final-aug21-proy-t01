@@ -56,14 +56,15 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
     borderRadius: 10,
     width: 141,
-    height: 30,
+    height: 40,
     backgroundColor: colors.darkPastelGreen,
-    top: -12,
+    top: -16,
   },
   aboutText: {
     color: colors.secondary,
     textAlign: 'center',
     fontWeight: 'bold',
     fontSize: 20,
+    top: 4,
   },
 });

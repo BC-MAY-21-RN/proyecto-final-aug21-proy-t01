@@ -20,6 +20,9 @@ const AccountScreen = () => {
         description={intialData.description}
         editable
       />
+      <Wrapper>
+        <HomeGamesSection />
+      </Wrapper>
     </ScrollView>
   );
 };
