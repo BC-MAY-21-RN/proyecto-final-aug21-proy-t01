@@ -23,7 +23,9 @@ import Metacritic from './Metacritic';
 import HomeGamesSection from './HomeGamesSection';
 import NewsSection from './NewsSection';
 import TrendingSection from './TrendingSection';
-import AboutMe from './AboutMe';
+import AboutMe from './UserProfileSection/AboutMe';
+import UserProfileSection from './UserProfileSection';
+import RoundedAvatar from './UserProfileSection/RoundedAvatar';
 
 export {
   AboutMe,
@@ -52,4 +54,6 @@ export {
   HomeGamesSection,
   NewsSection,
   TrendingSection,
+  RoundedAvatar,
+  UserProfileSection,
 };
