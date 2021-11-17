@@ -19,6 +19,8 @@ const GameHorizontalCard = ({
   comments,
   metacritic,
   link,
+  onClick,
+  id,
 }: CardData) => {
   const [showComments, setShowComments] = useState(true);
   useEffect(() => {
@@ -28,7 +30,7 @@ const GameHorizontalCard = ({
   }, []);
   return (
     <TouchableOpacity
-      onPress={() => handleOpenLink(link)}
+      onPress={() => (onClick ? onClick(id) : handleOpenLink(link))}
       style={styles.cardContainer}>
       <View style={styles.imageContainer}>
         <CardImage image={image} />

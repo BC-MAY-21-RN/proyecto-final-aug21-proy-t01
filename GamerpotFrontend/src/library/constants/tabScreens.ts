@@ -1,12 +1,8 @@
 import {colors} from './colors';
-import {
-  AccountScreen,
-  DealsScreen,
-  HomeScreen,
-  NewsScreen,
-} from '../../screens';
+import {AccountScreen, DealsScreen, NewsScreen} from '../../screens';
 import {styles} from '../../components/styles';
 import {fonts} from './fonts';
+import HomeStackScreen from '../../navigators/HomeStackScreen';
 
 export const tabNavigatorOptions = {
   tabBarStyle: styles.tabBackground,
@@ -31,7 +27,7 @@ export const navigationOptions = {...tabNavigatorOptions, ...headerOptions};
 export const tabStackList = [
   {
     name: 'Home',
-    component: HomeScreen,
+    component: HomeStackScreen,
     iconName: 'home',
   },
   {

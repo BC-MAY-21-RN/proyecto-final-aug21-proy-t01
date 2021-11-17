@@ -26,6 +26,7 @@ import TrendingSection from './TrendingSection';
 import AboutMe from './UserProfileSection/AboutMe';
 import UserProfileSection from './UserProfileSection';
 import RoundedAvatar from './UserProfileSection/RoundedAvatar';
+import TextButton from './TextButton';
 
 export {
   AboutMe,
@@ -56,4 +57,5 @@ export {
   TrendingSection,
   RoundedAvatar,
   UserProfileSection,
+  TextButton,
 };
