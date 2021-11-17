@@ -1,24 +1,29 @@
-import React, {useState} from 'react';
-import {AboutMe, Pagination, Wrapper} from '../../components';
-import {Text} from 'react-native';
-import {styles} from './styles';
+import React from 'react';
+import {ScrollView} from 'react-native';
+import {HomeGamesSection, UserProfileSection, Wrapper} from '../../components';
+
+const intialData = {
+  description:
+    'I am casual PC gamer who likes racing shooter and open world games.',
+  userName: 'Victor',
+  nickname: 'VictorWars',
+  userProfile: 'W',
+};
 
 const AccountScreen = () => {
-  const [page, setPage] = useState(1);
   return (
-    <Wrapper>
-      <AboutMe
-        isLoggedIn={true}
-        description="I’m a casual PC gamer who likes racing, shooter and open world games."
+    <ScrollView>
+      <UserProfileSection
+        name={intialData.userName}
+        nickname={intialData.nickname}
+        initialCharacter={intialData.userProfile}
+        description={intialData.description}
+        editable
       />
-      <Text style={styles.example}>You are on page {page}</Text>
-      <Pagination
-        totalItems={120}
-        pagesToDisplay={3}
-        pageSize={10}
-        onPageChange={setPage}
-      />
-    </Wrapper>
+      <Wrapper>
+        <HomeGamesSection />
+      </Wrapper>
+    </ScrollView>
   );
 };
 

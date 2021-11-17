@@ -1,15 +1,17 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, TextStyle, View, ViewStyle} from 'react-native';
 import {styles} from './styles';
 
 interface TagProps {
   text: string;
+  textStyle?: TextStyle;
+  viewStyle?: ViewStyle;
 }
 
-const Tag = ({text}: TagProps) => {
+const Tag = ({text, textStyle, viewStyle}: TagProps) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.labelTag} numberOfLines={1}>
+    <View style={viewStyle ? viewStyle : styles.container}>
+      <Text style={textStyle ? textStyle : styles.labelTag} numberOfLines={1}>
         {text}
       </Text>
     </View>
