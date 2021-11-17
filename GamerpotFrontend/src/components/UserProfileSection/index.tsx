@@ -3,6 +3,7 @@ import {Modal, StyleSheet, Text, View} from 'react-native';
 import {ColorPicker} from 'react-native-color-picker';
 import {AboutMe, RoundedAvatar} from '..';
 import {colors} from '../../library/constants/colors';
+import PencilIcon from './PencilIcon';
 import RoundedIcon from './RoundedIcon';
 
 interface UserProfileSectionProps {
@@ -39,17 +40,11 @@ const UserProfileSection = ({
             style={styles.modalContainer}
           />
         </Modal>
-        {editable && (
-          <RoundedIcon
-            name="pencil-outline"
-            size={22}
-            color={colors.secondary}
-            customStyle={styles.icon}
-            onPress={() => {
-              setModalVisible(true);
-            }}
-          />
-        )}
+        <PencilIcon
+          styleView={styles.icon}
+          editable={editable}
+          onPress={() => setModalVisible(true)}
+        />
       </View>
       <RoundedAvatar text={initialCharacter} bgColor={bgColor} />
       <View style={styles.details}>

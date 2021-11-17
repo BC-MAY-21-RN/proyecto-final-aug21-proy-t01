@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import {Modal, Pressable, Text, TextInput, View} from 'react-native';
-import {colors} from '../../../library/constants/colors';
-import RoundedIcon from '../RoundedIcon';
 import {styles} from './styles';
 import {AboutMeProps} from './props';
 import {Tag} from '../..';
+import PencilIcon from '../PencilIcon';
 
 const AboutMe = ({description, editable}: AboutMeProps) => {
   const [modalTextVisible, setModalTextVisible] = useState(false);
@@ -37,17 +36,11 @@ const AboutMe = ({description, editable}: AboutMeProps) => {
         viewStyle={styles.aboutContainer}
         textStyle={styles.aboutText}
       />
-      {editable && (
-        <RoundedIcon
-          name="pencil"
-          size={23}
-          color={colors.secondary}
-          customStyle={styles.pencilIcon}
-          onPress={() => {
-            setModalTextVisible(true);
-          }}
-        />
-      )}
+      <PencilIcon
+        styleView={styles.pencilIcon}
+        editable={editable}
+        onPress={() => setModalTextVisible(true)}
+      />
       <Text style={styles.descriptionText}>{text}</Text>
     </View>
   );
