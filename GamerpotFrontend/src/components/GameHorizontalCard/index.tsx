@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, TouchableOpacity, Linking} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
 import {CardData} from './props';
 import NewsDescription from '../NewsDescription';
 import DateText from '../DateText';

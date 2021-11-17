@@ -31,4 +31,9 @@ export const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
   },
+  skeletonItem: {
+    width: '48%',
+    height: 25,
+    borderRadius: 5,
+  },
 });
