@@ -17,3 +17,15 @@ export const trending3 = {
   filter: 'forza',
   render: GameHorizontalCard,
 };
+
+export const initialTrendingData = [
+  {
+    route: trending1.title,
+  },
+  {
+    route: trending2.title,
+  },
+  {
+    route: trending3.title,
+  },
+];

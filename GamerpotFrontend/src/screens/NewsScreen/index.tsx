@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View} from 'react-native';
+import {ActivityIndicator, View} from 'react-native';
 import {
   GameHorizontalCard,
   SectionTitle,
@@ -7,6 +7,7 @@ import {
   TextButton,
 } from '../../components';
 import {CardData} from '../../components/GameHorizontalCard/props';
+import GameCardSkeletonList from '../../components/GameHorizontalCard/Skeleton';
 import {useService} from '../../library/hooks/useService';
 import {NewsResponse} from '../../library/models/newsResponse';
 import {getNews} from '../../library/services/news.service';
@@ -39,14 +40,18 @@ const NewsScreen = () => {
         <SectionTitle title="Latest news" />
       </View>
       <View>
+        {areNewsLoading && currentPage === 1 && (
+          <GameCardSkeletonList display={10} />
+        )}
         {news &&
           news.map((newObj, index) => (
             <GameHorizontalCard {...newObj} key={index} />
           ))}
       </View>
-      {areNewsLoading && <Text>Loading...</Text>}
+      {areNewsLoading && <ActivityIndicator size="large" />}
       <TextButton
         text="Load more"
+        disabled={areNewsLoading}
         onClick={() => setNewsParams({...newsParams, page: currentPage + 1})}
       />
     </Wrapper>

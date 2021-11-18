@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import {CardData} from '../GameHorizontalCard/props';
 import {GamesSearchParams} from '../../library/models/gamesSearchParams';
 import GameHorizontalCard from '../GameHorizontalCard';
@@ -12,6 +12,7 @@ import GameSectionInputs from './GamesSectionInputs';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../../screens/HomeScreen/RootStackParams';
+import GameCardSkeletonList from '../GameHorizontalCard/Skeleton';
 
 const initialParams: GamesSearchParams = {
   page: 1,
@@ -45,8 +46,9 @@ const HomeGamesSection = () => {
           setGamesParams({...gamesParams, platforms: platform})
         }
       />
-      {areGamesLoading && <Text>Loading...</Text>}
-      {games && games.map((game, index) => (
+      {areGamesLoading && <GameCardSkeletonList display={5} />}
+      {!areGamesLoading &&
+        games && games.map((game, index) => (
           <GameHorizontalCard {...game} key={index} onClick={handleClick} />
         ))}
       <Pagination
