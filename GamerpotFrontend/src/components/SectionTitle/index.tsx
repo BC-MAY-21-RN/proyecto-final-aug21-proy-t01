@@ -3,11 +3,12 @@ import {Text, View} from 'react-native';
 import {styles} from './styles';
 import {SectionTitleProps} from './props';
 
-const SectionTitle = ({title, mb}: SectionTitleProps) => {
+const SectionTitle = ({title, viewStyle, textStyle}: SectionTitleProps) => {
   return (
-    <View
-      style={[styles.container, mb ? {marginBottom: mb} : {marginBottom: 5}]}>
-      <Text style={styles.textArea}>{title ? title : 'Games'}</Text>
+    <View style={[styles.container, viewStyle]}>
+      <Text style={[styles.textArea, textStyle]}>
+        {title ? title : 'Games'}
+      </Text>
     </View>
   );
 };

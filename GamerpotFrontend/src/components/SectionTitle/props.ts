@@ -1,4 +1,7 @@
+import {TextStyle, ViewStyle} from 'react-native';
+
 export interface SectionTitleProps {
   title: string;
-  mb?: number;
+  viewStyle?: ViewStyle;
+  textStyle?: TextStyle;
 }
