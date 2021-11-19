@@ -26,4 +26,9 @@ export const styles = StyleSheet.create({
     paddingTop: 20,
     height: 167,
   },
+  skeletonItem: {
+    borderRadius: 5,
+    height: 25,
+    marginBottom: 15,
+  },
 });

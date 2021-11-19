@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
+import GameCardSkeletonList from '../GameHorizontalCard/Skeleton';
 import {TabSectionProps} from './props';
 import {styles} from './styles';
 import TabHeader from './TabHeader/index';
@@ -14,7 +15,9 @@ const TabSection = ({tabData}: TabSectionProps) => {
         setActiveTab={setActiveTab}
       />
       <View style={styles.dataContainer}>
+        {!tabData[activeTab].data && <GameCardSkeletonList display={3} />}
         {tabData[activeTab] &&
+          tabData[activeTab].data &&
           tabData[activeTab].data.map((data, index) => {
             const RenderComponent = tabData[activeTab]
               .render as React.ElementType;

@@ -4,9 +4,12 @@ import {styles} from './styles';
 import Tag from '../Tag';
 import {TextButtonProps} from './TextButtonProps';
 
-const TextButton = ({text, viewStyle, textStyle, onClick}: TextButtonProps) => {
+const TextButton = ({text, onClick, disabled = false, viewStyle, textStyle}: TextButtonProps) => {
   return (
-    <TouchableOpacity onPress={onClick} style={styles.container}>
+    <TouchableOpacity
+      onPress={onClick}
+      style={styles.container}
+      disabled={disabled}>
       <Tag text={text} viewStyle={viewStyle} textStyle={textStyle} />
     </TouchableOpacity>
   );

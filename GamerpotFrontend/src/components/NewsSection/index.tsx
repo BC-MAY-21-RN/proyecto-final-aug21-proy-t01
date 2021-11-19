@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import {useService} from '../../library/hooks/useService';
 import {NewsResponse} from '../../library/models/newsResponse';
 import {getNews} from '../../library/services/news.service';

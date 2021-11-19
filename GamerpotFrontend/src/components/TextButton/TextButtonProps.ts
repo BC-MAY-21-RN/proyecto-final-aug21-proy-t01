@@ -5,4 +5,5 @@ export interface TextButtonProps {
   viewStyle?: ViewStyle;
   textStyle?: TextStyle;
   onClick: () => void;
+  disabled?: boolean;
 }
