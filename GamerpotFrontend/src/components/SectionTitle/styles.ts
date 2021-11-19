@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     paddingTop: 20,
     paddingBottom: 20,
+    marginBottom: 5,
   },
   textArea: {
     color: colors.secondary,
