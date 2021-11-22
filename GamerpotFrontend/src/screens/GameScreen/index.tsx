@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, ScrollView, Text, TouchableOpacity} from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../HomeScreen/RootStackParams';
 import {useNavigation, useRoute, RouteProp} from '@react-navigation/native';
 import {GameDetails} from '../../library/models/gameDetails';
 import {getGameInfo} from '../../library/services/games.service';
-import {Carousel} from '../../components';
+import {Carousel, Wrapper} from '../../components';
 
 type GameScreenProp = NativeStackNavigationProp<RootStackParamList, 'Game'>;
 type GameRouteProp = RouteProp<RootStackParamList, 'Game'>;
@@ -22,18 +22,20 @@ const GameScreen = () => {
     fetchGameDetails();
   }, []);
   return (
-    <View>
+    <ScrollView>
       <Carousel
         isImageCarousel={true}
         data={gameDetails.images ? gameDetails.images : []}
       />
-      <Text>Game screen</Text>
-      <Text>{route.params.gameId}</Text>
-      <Text>{gameDetails.name}</Text>
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Text>Return</Text>
-      </TouchableOpacity>
-    </View>
+      <Wrapper isCardWrapper={true}>
+        <Text>Game screen</Text>
+        <Text>{route.params.gameId}</Text>
+        <Text>{gameDetails.name}</Text>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Text>Return</Text>
+        </TouchableOpacity>
+      </Wrapper>
+    </ScrollView>
   );
 };
 
