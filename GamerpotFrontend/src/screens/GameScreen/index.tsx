@@ -5,7 +5,7 @@ import {RootStackParamList} from '../HomeScreen/RootStackParams';
 import {useNavigation, useRoute, RouteProp} from '@react-navigation/native';
 import {GameDetails} from '../../library/models/gameDetails';
 import {getGameInfo} from '../../library/services/games.service';
-import {Carousel, Wrapper, NewsDescription, TagList} from '../../components';
+import {Carousel, Wrapper, NewsDescription, TagList, DetailsCard, GameMetricsSection} from '../../components';
 import {styles} from './styles';
 
 type GameScreenProp = NativeStackNavigationProp<RootStackParamList, 'Game'>;
@@ -41,9 +41,7 @@ const GameScreen = () => {
               : []
           }
         />
-        <Text>Game screen</Text>
-        <Text>{route.params.gameId}</Text>
-        <Text>{gameDetails.name}</Text>
+        <GameMetricsSection game={gameDetails} />
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Text>Return</Text>
         </TouchableOpacity>

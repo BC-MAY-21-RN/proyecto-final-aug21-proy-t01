@@ -37,6 +37,9 @@ export interface GameDetails {
     slug: string;
   }>;
   images: Array<GameImage>;
+  esrb_rating: {
+    name: string;
+  };
 }
 
 export interface GameImage {
