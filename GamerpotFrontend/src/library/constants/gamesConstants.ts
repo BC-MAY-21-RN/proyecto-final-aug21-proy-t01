@@ -23,3 +23,7 @@ export const API_PLATFORMS_URL = `https://api.rawg.io/api/platforms?key=${API_KE
 export const getGameInfoUrl = (gameId: number) => {
   return `https://api.rawg.io/api/games/${gameId}?key=${API_KEY}&`;
 };
+
+export const getGameImagesUrl = (gameId: number) => {
+  return `https://api.rawg.io/api/games/${gameId}/screenshots?key=${API_KEY}`;
+};

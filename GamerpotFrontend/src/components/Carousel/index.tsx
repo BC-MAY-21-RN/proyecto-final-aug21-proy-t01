@@ -28,7 +28,11 @@ const Carousel = ({
         style={styles.scroll}>
         {data.map((item, index) =>
           isImageCarousel ? (
-            <Image source={{uri: item.url}} />
+            <Image
+              key={index}
+              source={{uri: item.image}}
+              style={styles.scroll}
+            />
           ) : (
             <News key={index} {...item} />
           ),

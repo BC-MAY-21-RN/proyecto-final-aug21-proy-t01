@@ -36,4 +36,16 @@ export interface GameDetails {
     name: string;
     slug: string;
   }>;
+  images: Array<GameImage>;
+}
+
+export interface GameImage {
+  image: string;
+  width: number;
+  height: number;
+}
+
+export interface GameImagesResponse {
+  count: number;
+  results: Array<GameImage>;
 }
