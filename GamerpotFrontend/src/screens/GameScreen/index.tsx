@@ -34,7 +34,13 @@ const GameScreen = () => {
           numberOfLines={2}
           textStyle={styles.title}
         />
-        <TagList tags={gameDetails.genres.map(genre => genre.name)} />
+        <TagList
+          tags={
+            gameDetails.genres
+              ? gameDetails.genres.map(genre => genre.name)
+              : []
+          }
+        />
         <Text>Game screen</Text>
         <Text>{route.params.gameId}</Text>
         <Text>{gameDetails.name}</Text>
