@@ -5,7 +5,8 @@ import {RootStackParamList} from '../HomeScreen/RootStackParams';
 import {useNavigation, useRoute, RouteProp} from '@react-navigation/native';
 import {GameDetails} from '../../library/models/gameDetails';
 import {getGameInfo} from '../../library/services/games.service';
-import {Carousel, Wrapper} from '../../components';
+import {Carousel, Wrapper, NewsDescription, TagList} from '../../components';
+import {styles} from './styles';
 
 type GameScreenProp = NativeStackNavigationProp<RootStackParamList, 'Game'>;
 type GameRouteProp = RouteProp<RootStackParamList, 'Game'>;
@@ -22,12 +23,18 @@ const GameScreen = () => {
     fetchGameDetails();
   }, []);
   return (
-    <ScrollView>
+    <ScrollView style={styles.container}>
       <Carousel
         isImageCarousel={true}
         data={gameDetails.images ? gameDetails.images : []}
       />
       <Wrapper isCardWrapper={true}>
+        <NewsDescription
+          text={gameDetails.name}
+          numberOfLines={2}
+          textStyle={styles.title}
+        />
+        <TagList tags={gameDetails.genres.map(genre => genre.name)} />
         <Text>Game screen</Text>
         <Text>{route.params.gameId}</Text>
         <Text>{gameDetails.name}</Text>

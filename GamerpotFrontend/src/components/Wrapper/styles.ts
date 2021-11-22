@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     borderTopRightRadius: 30,
     paddingLeft: 15,
     paddingRight: 15,
-    paddingVertical: 35,
-    marginTop: -30,
+    paddingVertical: 30,
+    marginTop: -25,
   },
 });
