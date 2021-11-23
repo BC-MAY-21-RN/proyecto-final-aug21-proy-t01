@@ -1,13 +1,15 @@
 import React, {useState} from 'react';
-import {ScrollView, View} from 'react-native';
+import {ScrollView, View, Image} from 'react-native';
 import News from '../News';
 import newsData from '../../library/utils/newsData';
 import {styles} from './styles';
 import DotPagination from '../DotPagination';
+import {CarouselProps} from './props';
 
-const data = newsData;
-
-const Carousel = () => {
+const Carousel = ({
+  data = newsData,
+  isImageCarousel = false,
+}: CarouselProps) => {
   const [active, setActive] = useState(0);
   const handleOnScroll = ({nativeEvent}: any) => {
     const currentIndex =
@@ -24,9 +26,13 @@ const Carousel = () => {
         pagingEnabled
         showsHorizontalScrollIndicator={false}
         style={styles.scroll}>
-        {data.map((item, index) => (
-          <News key={index} {...item} />
-        ))}
+        {data.map((item, index) =>
+          isImageCarousel ? (
+            <Image source={{uri: item.url}} />
+          ) : (
+            <News key={index} {...item} />
+          ),
+        )}
       </ScrollView>
       <DotPagination data={data} active={active} />
     </View>
