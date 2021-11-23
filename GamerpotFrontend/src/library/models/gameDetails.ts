@@ -40,6 +40,11 @@ export interface GameDetails {
   esrb_rating: {
     name: string;
   };
+  gamePlatforms: Array<{
+    id: number;
+    name: string;
+    slug: string;
+  }>;
 }
 
 export interface GameImage {

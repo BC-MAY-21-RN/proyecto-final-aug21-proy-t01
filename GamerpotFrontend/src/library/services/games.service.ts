@@ -34,7 +34,12 @@ export const getGameInfo = async (gameId: number) => {
     {image: gameInfo.background_image, width: 1920, height: 1080},
     ...images,
   ];
-  return {...gameInfo, images: parsedImages} as GameDetails;
+  const fixedPlatforms = fixGamePlatforms(gameInfo);
+  return {
+    ...gameInfo,
+    images: parsedImages,
+    gamePlatforms: fixedPlatforms,
+  } as GameDetails;
 };
 
 export const getPlatforms = async () => {
@@ -47,4 +52,9 @@ export const getGameImages = async (gameId: number) => {
   const response = await fetch(getGameImagesUrl(gameId));
   const gameImagesRaw: GameImagesResponse = await response.json();
   return gameImagesRaw.results;
+};
+
+const fixGamePlatforms = (game: GameDetails) => {
+  const fixedPlatform = game.platforms.map(p => p.platform);
+  return fixedPlatform;
 };

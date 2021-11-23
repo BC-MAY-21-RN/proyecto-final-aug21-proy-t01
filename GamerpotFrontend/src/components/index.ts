@@ -30,6 +30,7 @@ import TextButton from './TextButton';
 import DetailsCard from './GameDetails/DetailsCard';
 import GameMetricsSection from './GameDetails/GameMetricsSection';
 import GameSection from './GameDetails/GameSection';
+import GameData from './GameDetails/GameData';
 
 export {
   AboutMe,
@@ -64,4 +65,5 @@ export {
   DetailsCard,
   GameMetricsSection,
   GameSection,
+  GameData,
 };
