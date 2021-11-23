@@ -12,6 +12,7 @@ import {
   TagList,
   GameMetricsSection,
   GameData,
+  ContentDivisor,
 } from '../../components';
 import {styles} from './styles';
 import {parseDataToArray} from '../../library/utils/parseGames';
@@ -44,6 +45,7 @@ const GameScreen = () => {
         />
         <TagList tags={parseDataToArray(gameDetails.genres)} />
         <GameMetricsSection game={gameDetails} />
+        <ContentDivisor />
         <GameData gameDetails={gameDetails} />
       </Wrapper>
     </ScrollView>

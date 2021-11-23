@@ -31,6 +31,7 @@ import DetailsCard from './GameDetails/DetailsCard';
 import GameMetricsSection from './GameDetails/GameMetricsSection';
 import GameSection from './GameDetails/GameSection';
 import GameData from './GameDetails/GameData';
+import ContentDivisor from './ContentDivisor';
 
 export {
   AboutMe,
@@ -66,4 +67,5 @@ export {
   GameMetricsSection,
   GameSection,
   GameData,
+  ContentDivisor,
 };
