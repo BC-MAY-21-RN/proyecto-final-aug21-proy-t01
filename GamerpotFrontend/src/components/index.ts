@@ -29,6 +29,7 @@ import RoundedAvatar from './UserProfileSection/RoundedAvatar';
 import TextButton from './TextButton';
 import DetailsCard from './GameDetails/DetailsCard';
 import GameMetricsSection from './GameDetails/GameMetricsSection';
+import GameSection from './GameDetails/GameSection';
 
 export {
   AboutMe,
@@ -62,4 +63,5 @@ export {
   TextButton,
   DetailsCard,
   GameMetricsSection,
+  GameSection,
 };
