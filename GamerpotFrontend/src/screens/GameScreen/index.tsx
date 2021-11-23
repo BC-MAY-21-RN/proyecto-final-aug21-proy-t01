@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {ScrollView} from 'react-native';
+import {ScrollView, Alert} from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../HomeScreen/RootStackParams';
 import {useNavigation, useRoute, RouteProp} from '@react-navigation/native';
@@ -13,6 +13,7 @@ import {
   GameMetricsSection,
   GameData,
   ContentDivisor,
+  GameDetailsButtons,
 } from '../../components';
 import {styles} from './styles';
 import {parseDataToArray} from '../../library/utils/parseGames';
@@ -36,6 +37,10 @@ const GameScreen = () => {
       <Carousel
         isImageCarousel={true}
         data={gameDetails.images ? gameDetails.images : []}
+      />
+      <GameDetailsButtons
+        arrowPress={() => navigation.goBack()}
+        bookmarkPress={() => Alert.alert('Game saved')}
       />
       <Wrapper isCardWrapper={true}>
         <NewsDescription

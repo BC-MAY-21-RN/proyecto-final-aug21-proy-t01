@@ -32,6 +32,7 @@ import GameMetricsSection from './GameDetails/GameMetricsSection';
 import GameSection from './GameDetails/GameSection';
 import GameData from './GameDetails/GameData';
 import ContentDivisor from './ContentDivisor';
+import GameDetailsButtons from './GameDetails/GameDetailsButtons';
 
 export {
   AboutMe,
@@ -68,4 +69,5 @@ export {
   GameSection,
   GameData,
   ContentDivisor,
+  GameDetailsButtons,
 };
