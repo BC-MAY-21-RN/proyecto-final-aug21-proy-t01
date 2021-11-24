@@ -14,6 +14,7 @@ import {
   GameData,
   ContentDivisor,
   GameDetailsButtons,
+  GameDetailsCarousel,
 } from '../../components';
 import {styles} from './styles';
 import {parseDataToArray} from '../../library/utils/parseGames';
@@ -34,14 +35,7 @@ const GameScreen = () => {
   }, []);
   return (
     <ScrollView style={styles.container}>
-      <Carousel
-        isImageCarousel={true}
-        data={gameDetails.images ? gameDetails.images : []}
-      />
-      <GameDetailsButtons
-        arrowPress={() => navigation.goBack()}
-        bookmarkPress={() => Alert.alert('Game saved')}
-      />
+      <GameDetailsCarousel {...{navigation, gameDetails}} />
       <Wrapper isCardWrapper={true}>
         <NewsDescription
           text={gameDetails.name}
