@@ -1,5 +1,5 @@
-import { Comment } from './comment.entity';
-import { Game } from './game.entity';
+import { Comment } from "./comment.entity";
+import { Game } from "./game.entity";
 import {
   Column,
   Entity,
@@ -7,9 +7,9 @@ import {
   ManyToMany,
   OneToMany,
   PrimaryGeneratedColumn,
-} from 'typeorm';
+} from "typeorm";
 
-@Entity({ name: 'users' })
+@Entity({ name: "users" })
 export class User {
   @PrimaryGeneratedColumn()
   userId: number;
@@ -17,13 +17,19 @@ export class User {
   @Column()
   name: string;
 
+  @Column()
+  username: string;
+
   @Column({ unique: true })
   email: string;
 
   @Column()
   password: string;
 
-  @Column({ default: '' })
+  @Column({ default: "" })
+  description: string;
+
+  @Column({ default: "" })
   profilePictureUrl: string;
 
   @OneToMany((type) => Comment, (comment) => comment.user)
