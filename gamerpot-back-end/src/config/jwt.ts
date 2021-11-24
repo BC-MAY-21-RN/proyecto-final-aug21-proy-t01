@@ -1,4 +1,4 @@
 export const JWT = {
-  SECRET: process.env.JWT_SECRET,
-  EXPIRATION_TIME: process.env.EXPIRATION_TIME,
+  JWT_SECRET: 'abcdefghj',
+  EXPIRATION_TIME: '1hr',
 };
