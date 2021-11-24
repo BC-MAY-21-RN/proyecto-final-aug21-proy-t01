@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, TouchableOpacity} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {View} from 'react-native';
 import {styles} from './styles';
 import {GameDetailsButtonsProps} from './props';
+import IconButton from '../../IconButton';
 
 const GameDetailsButtons = ({
   arrowPress = () => {},
@@ -10,12 +10,8 @@ const GameDetailsButtons = ({
 }: GameDetailsButtonsProps) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.iconContainer} onPress={arrowPress}>
-        <Icon name="arrow-left" size={32} style={styles.icon} />
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.iconContainer} onPress={bookmarkPress}>
-        <Icon name="bookmark" size={32} style={styles.icon} />
-      </TouchableOpacity>
+      <IconButton onPress={arrowPress} icon="arrow-left" />
+      <IconButton onPress={bookmarkPress} icon="bookmark" />
     </View>
   );
 };

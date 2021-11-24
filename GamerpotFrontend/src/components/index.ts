@@ -33,6 +33,7 @@ import GameSection from './GameDetails/GameSection';
 import GameData from './GameDetails/GameData';
 import ContentDivisor from './ContentDivisor';
 import GameDetailsButtons from './GameDetails/GameDetailsButtons';
+import IconButton from './IconButton';
 
 export {
   AboutMe,
@@ -70,4 +71,5 @@ export {
   GameData,
   ContentDivisor,
   GameDetailsButtons,
+  IconButton,
 };
