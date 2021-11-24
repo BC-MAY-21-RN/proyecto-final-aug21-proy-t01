@@ -1,23 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import {ScrollView, Alert} from 'react-native';
+import {ScrollView} from 'react-native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../HomeScreen/RootStackParams';
 import {useNavigation, useRoute, RouteProp} from '@react-navigation/native';
 import {GameDetails} from '../../library/models/gameDetails';
 import {getGameInfo} from '../../library/services/games.service';
 import {
-  Carousel,
   Wrapper,
-  NewsDescription,
-  TagList,
-  GameMetricsSection,
-  GameData,
-  ContentDivisor,
-  GameDetailsButtons,
   GameDetailsCarousel,
+  GameDetailsSections,
 } from '../../components';
 import {styles} from './styles';
-import {parseDataToArray} from '../../library/utils/parseGames';
 
 type GameScreenProp = NativeStackNavigationProp<RootStackParamList, 'Game'>;
 type GameRouteProp = RouteProp<RootStackParamList, 'Game'>;
@@ -37,15 +30,7 @@ const GameScreen = () => {
     <ScrollView style={styles.container}>
       <GameDetailsCarousel {...{navigation, gameDetails}} />
       <Wrapper isCardWrapper={true}>
-        <NewsDescription
-          text={gameDetails.name}
-          numberOfLines={2}
-          textStyle={styles.title}
-        />
-        <TagList tags={parseDataToArray(gameDetails.genres)} />
-        <GameMetricsSection game={gameDetails} />
-        <ContentDivisor />
-        <GameData gameDetails={gameDetails} />
+        <GameDetailsSections gameDetails={gameDetails} />
       </Wrapper>
     </ScrollView>
   );

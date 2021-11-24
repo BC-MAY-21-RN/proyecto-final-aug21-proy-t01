@@ -35,6 +35,7 @@ import ContentDivisor from './ContentDivisor';
 import GameDetailsButtons from './GameDetails/GameDetailsButtons';
 import IconButton from './IconButton';
 import GameDetailsCarousel from './GameDetails/GameDetailsCarousel';
+import GameDetailsSections from './GameDetails/GameDetailsSections';
 
 export {
   AboutMe,
@@ -74,4 +75,5 @@ export {
   GameDetailsButtons,
   IconButton,
   GameDetailsCarousel,
+  GameDetailsSections,
 };
