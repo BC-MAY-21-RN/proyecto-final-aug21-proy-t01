@@ -3,8 +3,12 @@ import {ScrollView} from 'react-native';
 import {styles} from './styles';
 import {WrapperProps} from './props';
 
-const Wrapper = ({children}: WrapperProps) => {
-  return <ScrollView style={styles.wrapper}>{children}</ScrollView>;
+const Wrapper = ({children, isCardWrapper = false}: WrapperProps) => {
+  return (
+    <ScrollView style={isCardWrapper ? styles.cardWrapper : styles.wrapper}>
+      {children}
+    </ScrollView>
+  );
 };
 
 export default Wrapper;

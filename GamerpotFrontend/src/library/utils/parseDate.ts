@@ -14,6 +14,7 @@ const months = [
 ];
 
 export const parseDate = (dateToParse: string): string => {
+  if (!dateToParse) return '';
   const splitDate = dateToParse.split(' ');
   const date = new Date(splitDate[0]);
   const day = date.getDate();

@@ -14,3 +14,14 @@ export const parseGames = (games: Array<GameDetails>) => {
   }));
   return parsedGames;
 };
+
+export const parseDataToString = (list: Array<any>) => {
+  if (!list) return '';
+  const parsedData: string = list.map(obj => obj.name).join(', ');
+  return parsedData;
+};
+
+export const parseDataToArray = (list: Array<any>) => {
+  if (!list) return [];
+  return list.map(obj => obj.name);
+};

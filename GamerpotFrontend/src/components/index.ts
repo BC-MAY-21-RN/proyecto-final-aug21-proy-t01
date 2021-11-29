@@ -27,6 +27,15 @@ import AboutMe from './UserProfileSection/AboutMe';
 import UserProfileSection from './UserProfileSection';
 import RoundedAvatar from './UserProfileSection/RoundedAvatar';
 import TextButton from './TextButton';
+import DetailsCard from './GameDetails/DetailsCard';
+import GameMetricsSection from './GameDetails/GameMetricsSection';
+import GameSection from './GameDetails/GameSection';
+import GameData from './GameDetails/GameData';
+import ContentDivisor from './ContentDivisor';
+import GameDetailsButtons from './GameDetails/GameDetailsButtons';
+import IconButton from './IconButton';
+import GameDetailsCarousel from './GameDetails/GameDetailsCarousel';
+import GameDetailsSections from './GameDetails/GameDetailsSections';
 
 export {
   AboutMe,
@@ -58,4 +67,13 @@ export {
   RoundedAvatar,
   UserProfileSection,
   TextButton,
+  DetailsCard,
+  GameMetricsSection,
+  GameSection,
+  GameData,
+  ContentDivisor,
+  GameDetailsButtons,
+  IconButton,
+  GameDetailsCarousel,
+  GameDetailsSections,
 };

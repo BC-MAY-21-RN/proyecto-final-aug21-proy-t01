@@ -36,4 +36,24 @@ export interface GameDetails {
     name: string;
     slug: string;
   }>;
+  images: Array<GameImage>;
+  esrb_rating: {
+    name: string;
+  };
+  gamePlatforms: Array<{
+    id: number;
+    name: string;
+    slug: string;
+  }>;
+}
+
+export interface GameImage {
+  image: string;
+  width: number;
+  height: number;
+}
+
+export interface GameImagesResponse {
+  count: number;
+  results: Array<GameImage>;
 }

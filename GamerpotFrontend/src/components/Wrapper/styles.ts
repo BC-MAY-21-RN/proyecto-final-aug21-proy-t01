@@ -8,4 +8,14 @@ export const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
   },
+  cardWrapper: {
+    flex: 1,
+    backgroundColor: colors.primary,
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+    paddingLeft: 15,
+    paddingRight: 15,
+    paddingVertical: 30,
+    marginTop: -25,
+  },
 });
