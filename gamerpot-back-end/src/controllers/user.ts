@@ -50,7 +50,8 @@ export const signIn = async (
       const token = jwt.sign({ foundUser }, JWT.JWT_SECRET, {
         expiresIn: JWT.EXPIRATION_TIME,
       });
-      return res.status(200).json(token);
+      const userId = foundUser!.userId;
+      return res.status(200).json({token, userId});
     }
     return res.status(400).json({ message: "Credentials does not match" });
   } catch (error) {
@@ -62,7 +63,7 @@ export const signUp = async (
   req: Request,
   res: Response
 ): Promise<Response> => {
-  const { name, username, email, password, description, profilePictureUrl } =
+  const { name, userName, email, password } =
     req.body;
   const userRepository = getCustomRepository(UserRepository);
 
@@ -74,11 +75,9 @@ export const signUp = async (
     const newUser = await userRepository.save(
       new User({
         name,
-        username,
+        userName,
         email,
         password: encryptedPassword,
-        description,
-        profilePictureUrl,
       })
     );
     return res.status(200).json(newUser);

@@ -1,12 +1,15 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {Modal, View} from 'react-native';
 import {SectionTitle, TextButton} from '../..';
 import {styles} from './styles';
 import {CustomModalProps} from './props';
 import CloseIcon from '../CloseIcon';
+import {useFocusEffect} from '@react-navigation/native';
 
 function CustomModal({buttonText, viewStyle, form}: CustomModalProps) {
   const [modalVisible, setModalVisible] = useState(false);
+  useFocusEffect(useCallback(() => setModalVisible(false), []));
+
   return (
     <View>
       <Modal visible={modalVisible} animationType="slide" transparent={true}>

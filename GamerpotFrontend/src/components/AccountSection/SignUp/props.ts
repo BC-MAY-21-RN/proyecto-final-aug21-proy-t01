@@ -5,7 +5,7 @@ export interface SignUpFormData {
   userName: string;
   email: string;
   password: string;
-  confirmationPassword: string;
+  confirmationPassword?: string;
 }
 
 export interface SignUpFormProps extends FormikProps<SignUpFormData> {

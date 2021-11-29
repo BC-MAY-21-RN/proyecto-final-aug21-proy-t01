@@ -17,7 +17,7 @@ import {styles} from './styles';
 const defaultParams = {
   limit: 10,
   sort: 'publish_date:desc',
-  page: 0,
+  page: 1,
 };
 
 const NewsScreen = () => {
@@ -27,10 +27,10 @@ const NewsScreen = () => {
   const [currentPage, setCurrentPage] = useState(1);
   useEffect(() => {
     const fetchNews = async () => {
+      setCurrentPage(newsParams.page);
       const response: NewsResponse = await callNewsService(newsParams);
       const parsedNews = parseNewsToNewsCard(response.results);
       setNews(news.concat(parsedNews));
-      setCurrentPage(newsParams.page);
     };
     fetchNews();
   }, [newsParams]);
